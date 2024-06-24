@@ -1,148 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio website of Anurag Kanade" />
-    <meta
-      name="keywords"
-      content="fullstack developer, fullstack, portfolio,
-			personal website, HTML, CSS, SQL, Python, C++, R, EXCEL, APACHE CASSANDra"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
-    />
-	  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5008414277567291"
-     crossorigin="anonymous"></script>
-    <script
-      src="https://kit.fontawesome.com/fa62c117c7.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/index.css" />
 
-    <title>Anurag Kanade</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website of Anurag Kanade" />
+  <meta name="keywords" content="Machine Learning Engineer, ML, portfolio,
+			personal website, HTML, CSS, SQL, Python, C++, AI, EXCEL, Machine Learning" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5008414277567291"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="icon" href="./public/meta-icon.avif" type="image/x-icon" />
+  <title>Anurag Kanade</title>
+</head>
 
-  <body class="body-light">
-    <header id="top">
-      <a class="icon-border header-title" href="#">AK</a>
-      <nav>
-        <ul id="nav">
-          <li>
-            <a href="#project" class="link">Projects</a>
-          </li>
-          <li>
-            <a href="#stack" class="link">Tech Stack</a>
-          </li>
-          <li>
-            <a href="#contact" class="link">Contact</a>
-          </li>
-        </ul>
-        <button aria-label="Toggle theme" id="toggleTheme">
-          <i aria-hidden="true" class="icon-normal fas fa-moon"></i>
-        </button>
-        <button aria-label="Toggle navbar">
-          <i aria-hidden="true" class="icon-normal fas fa-bars"></i>
-        </button>
-      </nav>
-    </header>
+<body class="body-light">
+  <header id="top">
+    <a class="icon-border header-title" href="#">AK</a>
+    <nav>
+      <ul id="nav">
+        <li>
+          <a href="#project" class="link">Projects</a>
+        </li>
+        <li>
+          <a href="#stack" class="link">Tech Stack</a>
+        </li>
+        <li>
+          <a href="#contact" class="link">Contact</a>
+        </li>
+      </ul>
+      <button aria-label="Toggle theme" id="toggleTheme">
+        <i aria-hidden="true" class="icon-normal fas fa-moon"></i>
+      </button>
+      <button aria-label="Toggle navbar">
+        <i aria-hidden="true" class="icon-normal fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
-    <div class="hero">
-      <h1>
-        Hi. I am
-        <span class="hero-name">Anurag</span>
-        <span class="hero-name">Kanade🦄</span>
-      </h1>
+  <div class="hero">
+    <h1>
+      Hi, I am
+      <span class="hero-name">Anurag</span>
+      <span class="hero-name">Kanade🦄</span>
+    </h1>
 
-      <div class="hero-about">
+    <div class="hero-about">
+      <p>
+        Machine Learning Engineer, from India.
+        <div><b> Status quo:</b> Text-to-Speech</div>
+      </p>
+
+      <a class="resume" href="">
+        <!-- the resume link will be dropped here -->
+        <span class="btn">Resume</span>
+      </a>
+    </div>
+  </div>
+
+  <section id="project" class="project">
+    <h2 class="section-title">Projects</h2>
+    <!-- 0th  -->
+    <div class="project-container">
+      <img src="/public/gemma2b.jpg" alt="Gemma2b for German-to-English Translation" height="250"
+        width="450" />
+
+      <div class="project-content">
+        <h3>Gemma2b for  German-to-English  Translation</h3>
         <p>
-          I am a Data Analyst, who enjoys the process of playing with data and
-          having a passion about it.
+          Finetuned Gemma2b for German-to-english text translation using QLora and Supervised-Tuning method. 
         </p>
 
-        <a class="resume" href="">
-          <!-- the resume link will be dropped here -->
-          <span class="btn">Resume</span>
-        </a>
+        <ul class="project-skill">
+          <li>Python</li>
+          <li>GitHub</li>
+          <li>Numpy</li>
+          <li>Huggingface</li>
+          <li>LLM</li>
+        </ul>
+
+        <ul class="project-link">
+          <li>
+            <a href="https://github.com/anurag12-webster/Gemma-2B" aria-label="Source code"
+              title="source code" rel="noopener"><i class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="https://huggingface.co/dejavugfbh/gemma-2b-mt-G2E" aria-label="Preview" title="preview"
+              rel="noopener"><i aria-hidden="true" class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 1st  -->
+    <div class="project-container">
+      <img src="/public/Untitled1.png" alt="Exploratory Data Analysis in R." height="250" width="450" />
+      <!-- 1st  -->
+      <div class="project-content">
+        <h3>Exploratory Data Analysis in R.</h3>
+        <p>
+          To get insight of Exploratory Data analysis and Descriptive
+          Statistics in Data Analysis project pipeline.
+        </p>
+
+        <ul class="project-skill">
+          <li>R</li>
+          <li>GitHub</li>
+          <!-- <li>JavaScript</li>
+					<li>React.js</li> -->
+        </ul>
+
+        <ul class="project-link">
+          <li>
+            <a href="#" aria-label="Source code" title="source code" rel="noopener"><i
+                class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Preview" title="preview" rel="noopener"><i aria-hidden="true"
+                class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <section id="project" class="project">
-      <h2 class="section-title">Projects</h2>
+    <!-- 2nd  -->
+    <div class="project-container">
+      <img src="/public/examp.jpg" alt="AI Powered Exam Proctoring Software." height="250" width="450" />
 
-      <div class="project-container">
-        <img
-          src="/public/Untitled1.png"
-          alt="cleanfolio"
-          height="250"
-          width="450"
-        />
+      <div class="project-content">
+        <h3>AI Powered Exam Proctoring Software.</h3>
+        <p>
+          AI-powered proctoring system to streamline selection processes for both national and international hackathons
+        </p>
 
-        <div class="project-content">
-          <h3>Exploratory Data Analysis in R.</h3>
-          <p>
-            To get insight of Exploratory Data analysis and Descriptive
-            Statistics in Data Analysis project pipeline.
-          </p>
-
-          <ul class="project-skill">
-            <li>R</li>
-            <li>GitHub</li>
-            <!-- <li>JavaScript</li>
+        <ul class="project-skill">
+          <li>Python</li>
+          <li>GitHub</li>
+          <li>Pytorch</li>
+          <li>JavaScript</li>
+          <li>Html5/CSS3</li>
+          <!-- <li>JavaScript</li>
 					<li>React.js</li> -->
-          </ul>
+        </ul>
 
-          <ul class="project-link">
-            <li>
-              <a
-                href="#"
-                aria-label="Source code"
-                title="source code"
-                rel="noopener"
-                ><i class="icon-border fas fa-code"></i
-              ></a>
-            </li>
-            <li>
-              <a href="#" aria-label="Preview" title="preview" rel="noopener"
-                ><i
-                  aria-hidden="true"
-                  class="icon-border fas fa-external-link-alt"
-                ></i
-              ></a>
-            </li>
-          </ul>
-        </div>
+        <ul class="project-link">
+          <li>
+            <a href="https://github.com/Tanmaypatil123/Exam-Proctoring-System.git" aria-label="Source code"
+              title="source code" rel="noopener"><i class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/Tanmaypatil123/Exam-Proctoring-System.git" aria-label="Preview" title="preview"
+              rel="noopener"><i aria-hidden="true" class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div>
 
-    <section id="stack" class="stack">
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="stack-container">
-        <div class="tech-container">
-          <i class="devicon-html5-plain colored"></i>
-          HTML
-        </div>
-        <div class="tech-container">
-          <i class="devicon-css3-plain colored"></i>
-          CSS
-        </div>
-        <div class="tech-container">
-          <i class="devicon-r-original"></i>
+    <!-- 3rd  -->
+    <div class="project-container">
+      <img src="/public/pengine.png" alt="Profanity Engine" height="250" width="450" />
 
-          R
-        </div>
-        <div class="tech-container">
-          <i class="devicon-opencv-plain-wordmark colored"></i>
+      <div class="project-content">
+        <h3>Profanity Engine</h3>
+        <p>
+          Browser extension for desktop and mobile. Neural network detects and reports obscene content.
+        </p>
 
-          OpenCV
-        </div>
-        <!-- <div class="tech-container">
+        <ul class="project-skill">
+          <li>Google Chrome</li>
+          <li>GitHub</li>
+          <li>Tensorflow.js</li>
+          <li>Html5/CSS3</li>
+
+          <!-- <li>JavaScript</li>
+					<li>React.js</li> -->
+        </ul>
+
+        <ul class="project-link">
+          <li>
+            <a href="https://github.com/anurag12-webster/profanity_engineV2" aria-label="Source code"
+              title="source code" rel="noopener"><i class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/anurag12-webster/profanity_engineV2" aria-label="Preview" title="preview"
+              rel="noopener"><i aria-hidden="true" class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4th  -->
+    <div class="project-container">
+      <img src="/public/tooth.png" alt="Dental OPG" height="250" width="450" />
+
+      <div class="project-content">
+        <h3>Dental OPG Segmentation & Disease Detection</h3>
+        <p>
+          Dental X-ray segmentation and Disease Prediction.
+        </p>
+
+        <ul class="project-skill">
+          <li>Python</li>
+          <li>GitHub</li>
+          <li>MonAI</li>
+          <li>Pytorch</li>
+
+          <!-- <li>JavaScript</li>
+					<li>React.js</li> -->
+        </ul>
+
+        <ul class="project-link">
+          <li>
+            <a href="https://github.com/anurag12-webster/OPG_Image_seg" aria-label="Source code"
+              title="source code" rel="noopener"><i class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/anurag12-webster/OPG_Image_seg" aria-label="Preview" title="preview"
+              rel="noopener"><i aria-hidden="true" class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5 th  -->
+    <div class="project-container">
+      <img src="/public/LEPM.jpg" alt="Life Expectancy Comparative Analysis & Prediction " height="250"
+        width="450" />
+
+      <div class="project-content">
+        <h3>Life Expectancy Comparative Analysis & Prediction</h3>
+        <p>
+          Predictive model for analysis of Lifespan expectancy in Developing and developed countries based upon 15+
+          major life factors.
+        </p>
+
+        <ul class="project-skill">
+          <li>Python</li>
+          <li>GitHub</li>
+          <li>Numpy</li>
+          <li>Matplotlib</li>
+          <li>Scikit-learn</li>
+        </ul>
+
+        <ul class="project-link">
+          <li>
+            <a href="https://github.com/anurag12-webster/LIFE_EXPECTANCY_PREDICTION" aria-label="Source code"
+              title="source code" rel="noopener"><i class="icon-border fas fa-code"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/anurag12-webster/LIFE_EXPECTANCY_PREDICTION" aria-label="Preview" title="preview"
+              rel="noopener"><i aria-hidden="true" class="icon-border fas fa-external-link-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="stack">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="stack-container">
+      <div class="tech-container">
+        <i class="devicon-html5-plain colored"></i>
+        HTML
+      </div>
+      <div class="tech-container">
+        <i class="devicon-css3-plain colored"></i>
+        CSS
+      </div>
+      <div class="tech-container">
+        <i class="devicon-javascript-plain colored"></i>
+
+        JavaScript
+      </div>
+      <div class="tech-container">
+        <i class="devicon-r-plain colored"></i>
+
+        R
+      </div>
+      <div class="tech-container">
+        <i class="devicon-docker-plain colored"></i>
+
+        OpenCV
+      </div>
+      <!-- <div class="tech-container">
 				<i class="devicon-dart-plain colored"></i>
 				Dart
 			</div>
@@ -150,81 +293,107 @@
 				<i class="devicon-flutter-plain colored"></i>
 				Flutter
 			</div> -->
-        <div class="tech-container">
-          <i class="devicon-cplusplus-plain"></i>
-          C++
-        </div>
+      <div class="tech-container">
+        <i class="devicon-python-plain colored"></i>
 
-        <div class="tech-container">
-          <i class="devicon-java-plain-wordmark colored"></i>
+        Python
+      </div>
+      <div class="tech-container">
+        <i class="devicon-cplusplus-plain colored"></i>
+        C++
+      </div>
 
-          Java
-        </div>
-        <div class="tech-container">
-          <i class="devicon-mysql-plain colored"></i>
+      <div class="tech-container">
+        <i class="devicon-mysql-plain colored"></i>
 
-          Mysql
-        </div>
-        <div class="tech-container">
-          <i class="devicon-python-plain colored"></i>
+        Mysql
+      </div>
+      <div class="tech-container">
+        <i class="devicon-mongodb-plain colored"></i>
 
-          Python
-        </div>
+        MongoDB
+      </div>
+      <div class="tech-container">
+        <i class="devicon-flask-plain colored"></i>
 
-        <!-- <div class="tech-container">
+        flask
+      </div>
+      <div class="tech-container">
+        <i class="devicon-github-plain"></i>
+
+        Github Actions
+      </div>
+      <div class="tech-container">
+        <i class="devicon-linux-plain"></i>
+
+        Linux
+      </div>
+      <div class="tech-container">
+        <i class="devicon-numpy-plain colored"></i>
+
+        Numpy
+      </div>
+      <!-- <div class="tech-container">
 				<i class="devicon-linux-plain"></i>
 				Linux
 			</div> -->
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2 class="section-title">Get in touch</h2>
-
-      <ul>
-        <li>
-          <a href="mailto:anuragkanade6@gmail.com">
-            <span class="btn">
-              <i aria-hidden="true" class="fas icon fa-envelope"></i>Email
-            </span>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://github.com/anurag12-webster" aria-label="Github">
-            <span class="btn">
-              <i aria-hidden="true" class="fab icon fa-github"></i>
-              Github
-            </span>
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anuragk12/"
-            aria-label="Linkedin"
-          >
-            <span class="btn">
-              <i aria-hidden="true" class="fab icon fa-linkedin"></i>
-              Linkedin
-            </span>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <footer>
-      <small>&copy; 2022-23 Anurag Kanade </small>
-      <h6>All Copyrights Reserved . @anurag</h6>
-    </footer>
-
-    <div class="scroll-container">
-      <div aria-label="Scroll up" class="scroll-up">
-        <a href="#top">
-          <i aria-hidden="true" class="fas fa-arrow-up"></i>
-        </a>
-      </div>
     </div>
-    <script src="./js/index.js"></script>
-  </body>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get in touch</h2>
+
+    <ul>
+      <li>
+        <a href="mailto:anuragkanade54@gmail.com">
+          <span class="btn">
+            <i aria-hidden="true" class="fas icon fa-envelope"></i>Email
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/anurag12-webster" aria-label="Github">
+          <span class="btn">
+            <i aria-hidden="true" class="fab icon fa-github"></i>
+            Github
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.linkedin.com/in/anurag-kanade" aria-label="Linkedin">
+          <span class="btn">
+            <i aria-hidden="true" class="fab icon fa-linkedin"></i>
+            Linkedin
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://medium.com/@anuragkanade6" aria-label="Medium">
+          <span class="btn">
+            <i aria-hidden="true" class="fab icon fa-medium"></i>
+            Medium
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <small>&copy; 2024-25 Anurag Kanade </small>
+    <h6>All rights Reserved</h6>
+  </footer>
+
+  <div class="scroll-container">
+    <div aria-label="Scroll up" class="scroll-up">
+      <a href="#top">
+        <i aria-hidden="true" class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
