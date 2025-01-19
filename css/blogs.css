@@ -1,0 +1,49 @@
+#blogs-container {
+  margin-top: 2rem;
+}
+.project-container {
+  display: flex;
+  margin-bottom: 2rem;
+  background-color: var(--bg-alt); 
+  border-radius: 10px;
+  overflow: hidden;
+}
+.project-image {
+  flex: 0 0 40%;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.project-content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.project-content h3 {
+  color: var(--fg-alt); 
+  margin-top: 0;
+}
+.project-content p {
+  color: var(--fg); 
+  flex-grow: 1;
+}
+.project-skill {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-center;
+  align-items: center;
+}
+.btn {
+  padding: 0.5em 1em;
+  background-color: var(--primary);
+  color: var(--bg);
+}
+.eye-icon {
+  color: var(--fg-alt); 
+}
