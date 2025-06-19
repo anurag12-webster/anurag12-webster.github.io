@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Using React Server Components and Server Actions in Next.js - A comprehensive guide to modern React development.">
+    <meta name="keywords" content="React, Next.js, Server Components, Server Actions, web development, tutorial">
+    <meta name="author" content="Anurag Kanade">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Using React Server Components and Server Actions in Next.js">
+    <meta property="og:description" content="A comprehensive guide to leveraging React Server Components and Server Actions in Next.js for modern web development.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anuragkanade.com/pages/blog-post.html">
+    <meta property="og:image" content="https://anuragkanade.com/images/og.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Anurag Kanade Portfolio">
+    <meta property="article:author" content="Anurag Kanade">
+    <meta property="article:published_time" content="2024-09-05T00:00:00Z">
+    <meta property="article:tag" content="React">
+    <meta property="article:tag" content="Next.js">
+    <meta property="article:tag" content="Server Components">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Using React Server Components and Server Actions in Next.js">
+    <meta name="twitter:description" content="A comprehensive guide to leveraging React Server Components and Server Actions in Next.js for modern web development.">
+    <meta name="twitter:image" content="https://anuragkanade.com/images/og.webp">
+    <meta name="twitter:creator" content="@anurag_kanade12">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Blog Post - Anurag Kanade</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-[var(--bg-primary)] text-[var(--text-secondary)] font-['Inter'] min-h-screen transition-all duration-300">
+    <header class="nav-header">
+        <nav class="nav-container">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <div class="hamburger"></div>
+            </button>
+            <div class="nav-wrapper">
+                <div class="nav-highlight"></div>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-toggle-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.906 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z">
+                        </path>
+                    </svg>
+                    <svg class="theme-toggle-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M12 4.5a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V5.25A.75.75 0 0 1 12 4.5ZM18.5 6.25a.75.75 0 0 0-1.06-1.06L15.657 7a.75.75 0 0 0 1.06 1.06l1.785-1.81Zm-3.5 10.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V17.25a.75.75 0 0 1 .75-.75ZM5.5 6.25a.75.75 0 0 0-1.06-1.06L2.657 7a.75.75 0 0 0 1.06 1.06l1.785-1.81ZM19.5 12a.75.75 0 0 1-.75.75H16.5a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM4.5 12a.75.75 0 0 1-.75.75H1.5a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 4.5 12ZM8.343 15.657a.75.75 0 0 0-1.06 1.06l1.785 1.81a.75.75 0 1 0 1.06-1.06L8.343 15.657Zm10.25-3.5a.75.75 0 0 1 .75.75c0 3.314-2.686 6-6 6s-6-2.686-6-6a.75.75 0 0 1 1.5 0c0 2.485 2.015 4.5 4.5 4.5s4.5-2.015 4.5-4.5a.75.75 0 0 1 .75-.75Z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <!-- Blog Post Container -->
+        <article class="blog-post-container">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="blog-post-nav">
+                    <a href="blog.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Blog
+                    </a>
+                </div>
+
+                <!-- Blog Post Header -->
+                <header class="blog-post-header">
+                    <h1 class="blog-post-title" id="post-title">
+                        Using React Server Components and Server Actions in Next.js
+                    </h1>
+                    <div class="blog-post-meta">
+                        <div class="blog-post-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <span class="author-name">Arjun Kumar</span>
+                                <span class="post-date" id="post-date">Published on Sep 5, 2024</span>
+                            </div>
+                        </div>
+                        <div class="blog-post-stats">
+                            <span class="reading-time">8 min read</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Blog Post Content -->
+                <div class="blog-post-content" id="post-content">
+                    <div class="prose">
+                        <p class="lead">
+                            React Server Components and Server Actions represent a paradigm shift in how we build React applications.
+                            This comprehensive guide explores how to leverage these powerful features in Next.js to create more efficient,
+                            performant web applications.
+                        </p>
+
+                        <h2>What are React Server Components?</h2>
+                        <p>
+                            React Server Components (RSC) are a new type of component that runs on the server instead of the client.
+                            Unlike traditional React components that execute in the browser, Server Components run during the build process
+                            or on each request, allowing you to access server-side resources directly.
+                        </p>
+
+                        <h3>Key Benefits</h3>
+                        <ul>
+                            <li><strong>Reduced Bundle Size:</strong> Server Components don't ship JavaScript to the client</li>
+                            <li><strong>Direct Database Access:</strong> Query databases and APIs directly without additional API routes</li>
+                            <li><strong>Improved Performance:</strong> Faster initial page loads and better Core Web Vitals</li>
+                            <li><strong>Enhanced Security:</strong> Sensitive operations stay on the server</li>
+                        </ul>
+
+                        <h2>Server Actions: The Missing Piece</h2>
+                        <p>
+                            Server Actions complement Server Components by providing a way to handle form submissions and mutations
+                            directly on the server. They eliminate the need for separate API routes for many common operations.
+                        </p>
+
+                        <div class="code-block">
+                            <pre><code>// app/actions.js
+'use server'
+
+export async function createPost(formData) {
+  const title = formData.get('title')
+  const content = formData.get('content')
+
+  // Direct database operation
+  await db.post.create({
+    data: { title, content }
+  })
+
+  revalidatePath('/blog')
+}</code></pre>
+                        </div>
+
+                        <h2>Practical Implementation</h2>
+                        <p>
+                            Let's build a simple blog post creation form using Server Components and Server Actions.
+                            This example demonstrates the seamless integration between server-side rendering and server-side mutations.
+                        </p>
+
+                        <h3>Setting Up the Form Component</h3>
+                        <div class="code-block">
+                            <pre><code>// app/create-post/page.js
+import { createPost } from '../actions'
+
+export default function CreatePost() {
+  return (
+    &lt;form action={createPost}&gt;
+      &lt;input name="title" placeholder="Post title" required /&gt;
+      &lt;textarea name="content" placeholder="Post content" required&gt;&lt;/textarea&gt;
+      &lt;button type="submit"&gt;Create Post&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}</code></pre>
+                        </div>
+
+                        <h2>Best Practices and Considerations</h2>
+                        <p>
+                            While Server Components and Server Actions are powerful, they come with their own set of considerations:
+                        </p>
+
+                        <ul>
+                            <li>Use Server Components for data fetching and static content</li>
+                            <li>Reserve Client Components for interactive features</li>
+                            <li>Implement proper error handling in Server Actions</li>
+                            <li>Consider caching strategies for optimal performance</li>
+                        </ul>
+
+                        <h2>Conclusion</h2>
+                        <p>
+                            React Server Components and Server Actions represent the future of React development.
+                            By moving computation to the server, we can build faster, more secure applications while
+                            maintaining the developer experience we love about React.
+                        </p>
+
+                        <p>
+                            As you explore these features, remember that the goal is to create better user experiences.
+                            Use Server Components and Server Actions where they make sense, and don't hesitate to mix
+                            them with traditional Client Components when interactivity is needed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Blog Post Footer -->
+                <footer class="blog-post-footer">
+                    <div class="blog-post-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Server Components</span>
+                        <span class="tag">Web Development</span>
+                    </div>
+
+                    <div class="blog-post-actions">
+                        <button class="action-btn share-btn" id="share-post">
+                            <i class="fas fa-share"></i>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </footer>
+
+                <!-- Navigation to other posts -->
+                <nav class="blog-post-navigation">
+                    <a href="blog-post.html?id=machine-learning" class="nav-post prev-post">
+                        <div class="nav-post-direction">← Previous</div>
+                        <div class="nav-post-title">Getting Started with Machine Learning</div>
+                    </a>
+                    <a href="blog-post.html?id=web-trends" class="nav-post next-post">
+                        <div class="nav-post-direction">Next →</div>
+                        <div class="nav-post-title">Modern Web Development Trends</div>
+                    </a>
+                </nav>
+            </div>
+        </article>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/blog-post.js"></script>
+</body>
+</html>
