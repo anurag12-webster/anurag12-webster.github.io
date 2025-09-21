@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { getBlogPost } from "@/lib/blog";
+import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { formatDate, calculateReadTime } from "@/lib/utils";
 
@@ -11,6 +11,13 @@ interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

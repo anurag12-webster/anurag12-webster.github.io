@@ -30,7 +30,7 @@ export default async function Home() {
                 <span className="text-primary">Anurag</span>
               </h1>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
-                I work on Automatic Speech Recognition, Text-to-Speech, NLP, and Machine Learning. This blog is some of what I&apos;m learning along the way. All opinions are my own. 🚀
+                I work on Automatic Speech Recognition, Text-to-Speech, NLP, and Machine Learning. This blog is some of what I&apos;m learning along the way. All opinions are my own...
               </p>
             </div>
             
