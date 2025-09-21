@@ -1,0 +1,43 @@
+---
+title: "Hidden Draft Post"
+description: "This is a draft post that will be hidden from the public site."
+author: "Anurag Kanade"
+date: "2024-12-20"
+categories: ["Draft", "Hidden"]
+thumbnail: "/placeholder-blog.jpg"
+hidden: true
+---
+
+# This is a Hidden Post
+
+This post has `hidden: true` in its frontmatter, so it won't appear on the public site.
+
+## How to Hide Posts
+
+To hide any MDX post from your site, simply add `hidden: true` to the frontmatter:
+
+```yaml
+---
+title: "Your Post Title"
+description: "Your post description"
+author: "Your Name"
+date: "2024-12-20"
+categories: ["Category1", "Category2"]
+thumbnail: "/your-image.jpg"
+hidden: true  # This hides the post
+---
+```
+
+## Use Cases
+
+- Draft posts you're still working on
+- Posts you want to keep private
+- Test posts during development
+- Archived content you don't want to delete
+
+The post will still be accessible via direct URL if someone knows the slug, but it won't appear in:
+- The blog listing page
+- The recent posts section
+- Any other public listings
+
+To make it visible again, simply change `hidden: true` to `hidden: false` or remove the hidden field entirely.
