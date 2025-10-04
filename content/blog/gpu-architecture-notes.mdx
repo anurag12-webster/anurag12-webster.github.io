@@ -1,0 +1,101 @@
+---
+title: "How the RTX 3090 Actually Works: GPU Architecture notes..."
+description: "Breaking down the GA102 architecture - from GPCs and streaming multiprocessors to CUDA cores and ray tracing units."
+author: "Anurag Kanade"
+date: "2025-01-05"
+categories: ["Hardware", "GPU", "Computer Architecture"]
+thumbnail: "/placeholder-blog.jpg"
+---
+
+I spent some time watching [Branch Education's video](https://www.youtube.com/watch?v=example) on how GPUs work, specifically the RTX 3090, and took detailed notes. Figured I'd clean them up and share what I learned about the **GA102 architecture**.
+
+## The Hardware Breakdown
+
+We're looking at **GA102**, which is the 3090's GPU processor architecture.
+
+### The Hierarchy
+
+The architecture is organized in layers:
+
+1. **7 GPCs** (Graphics Processing Clusters) at the top level
+
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+  <img src="https://learnopencv.com/wp-content/uploads/2025/05/Graphics-Processing-Clusters.png" alt="Graphics Processing Clusters" style={{ maxWidth: '600px', width: '100%' }} />
+  <p style={{ fontStyle: 'italic', marginTop: '0.5rem', textAlign: 'center' }}>GPU architecture showing the 7 GPCs (Graphics Processing Clusters)</p>
+</div>
+
+2. Within each GPC, there are **12 SMs** (Streaming Multiprocessors)
+
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '2rem 0' }}>
+  <img src="https://learnopencv.com/wp-content/uploads/2025/05/Streaming-Multiprocessors.png" alt="Streaming Multiprocessors" style={{ maxWidth: '600px', width: '100%' }} />
+  <p style={{ fontStyle: 'italic', marginTop: '0.5rem', textAlign: 'center' }}>Internal structure of a Streaming Multiprocessor (SM)</p>
+</div>
+
+3. Inside each SM, there are **4 warp schedulers** and **1 Ray Tracing core**
+4. Inside each warp, there are **32 CUDA cores** (shading cores) and **1 Tensor core**
+
+### Total Core Count
+
+Across the entire GPU:
+
+- **10,752** CUDA cores
+- **336** Tensor cores
+- **84** Ray Tracing cores
+
+### Around the Edge
+
+The chip's periphery includes:
+
+- 12 graphics memory controllers
+- NVLink controllers
+- PCIe interface
+- 6MB Level 2 SRAM cache at the bottom
+- Gigathread Engine that manages all 7 GPCs and the streaming multiprocessors inside
+
+### Inside Each SM
+
+Each streaming multiprocessor contains:
+
+- 128KB of L1 cache/shared memory (configurable split)
+
+## What Each Core Does
+
+### CUDA Cores
+
+Can be thought of as simple binary calculators - they handle addition, multiplication, and a few other basic operations.
+
+### Tensor Cores
+
+Matrix multiplication and addition calculators. They're used the most when working with geometrical transformations and neural networks.
+
+### Ray Tracing Cores
+
+The fewest and the largest cores. They're specially designed for ray tracing algorithms.
+
+## Key Terminologies
+
+### FMA (Fused Multiply-Add)
+
+The operation `A × B + C`. This is a fundamental calculation that gets used constantly in GPU operations.
+
+### SIMD (Single Instruction, Multiple Data)
+
+GPUs solve embarrassingly parallel problems using SIMD - applying one instruction to multiple data points simultaneously.
+
+### SIMT (Single Instruction, Multiple Threads)
+
+Basically SIMD but adds a program counter, which avoids conflicts from dependency and branching of operations.
+
+## Computational Architecture → Physical Hardware
+
+Now that we understand how SIMD/SIMT works, here's how the computational architecture maps to the physical hardware:
+
+- Each instruction is completed by a **thread**
+- A **thread** is paired with a **CUDA core**
+- Threads are bundled into groups of 32 called **warps**
+- The same sequence of instructions are issued to all threads in a warp
+- **Warps** are grouped into **thread blocks**, which are handled by a **Streaming Multiprocessor (SM)**
+- **Thread blocks** are grouped into **grids**, which are computed across the entire GPU
+
+All these operations are managed and scheduled by the **Gigathread Engine**, which maps the available thread blocks to the streaming multiprocessors.
+
