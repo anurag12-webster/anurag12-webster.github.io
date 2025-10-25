@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -31,7 +30,7 @@ export default function ProjectsPage() {
           <div className="mb-16 space-y-3">
             <h1 className="display-heading text-5xl md:text-6xl">Projects</h1>
             <p className="section-subtitle text-lg md:text-xl max-w-3xl text-muted-foreground">
-              projects i've built
+              projects i&apos;ve built
             </p>
           </div>
 

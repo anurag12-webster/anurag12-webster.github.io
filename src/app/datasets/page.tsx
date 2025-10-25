@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -80,7 +79,7 @@ export default function DatasetsPage() {
           <div className="mb-16 space-y-3">
             <h1 className="display-heading text-5xl md:text-6xl">Datasets</h1>
             <p className="section-subtitle text-lg md:text-xl max-w-3xl text-muted-foreground">
-              Datasets I've curated and published to support the ML community.
+              Datasets I&apos;ve curated and published to support the ML community.
             </p>
           </div>
 
