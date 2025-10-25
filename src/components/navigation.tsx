@@ -14,6 +14,7 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/blog", label: "Blog" },
+    { href: "/projects", label: "Projects" },
     { href: "/datasets", label: "Datasets" },
   ];
 
@@ -48,6 +49,7 @@ export function Navigation() {
                 {navItems.map((item) => {
                   const isActive = pathname === item.href ||
                                    (item.href === '/blog' && pathname.startsWith('/blog')) ||
+                                   (item.href === '/projects' && pathname.startsWith('/projects')) ||
                                    (item.href === '/datasets' && pathname.startsWith('/datasets'));
 
                   return (
@@ -79,6 +81,7 @@ export function Navigation() {
               {navItems.map((item) => {
                 const isActive = pathname === item.href ||
                                  (item.href === '/blog' && pathname.startsWith('/blog')) ||
+                                 (item.href === '/projects' && pathname.startsWith('/projects')) ||
                                  (item.href === '/datasets' && pathname.startsWith('/datasets'));
 
                 return (

@@ -57,6 +57,18 @@ const datasets = [
       "Balanced train/validation splits to speed experimentation",
     ],
   },
+  {
+    title: "Obama Voice Sample Dataset",
+    description:
+      "25+ minutes of Barack Obama's voice samples from public speeches, optimized for RVC (Retrieval-based Voice Conversion) model training.",
+    tags: ["Speech", "RVC", "Voice Cloning"],
+    link: "https://huggingface.co/datasets/ModelsLab/Obama-Sample-Dataset",
+    highlights: [
+      "Clean 24 kHz WAV audio from public speeches and addresses",
+      "3,000+ downloads from the research community",
+      "Production-ready format for immediate RVC training workflows",
+    ],
+  },
 ];
 
 export default function DatasetsPage() {
@@ -68,7 +80,7 @@ export default function DatasetsPage() {
           <div className="mb-16 space-y-3">
             <h1 className="display-heading text-5xl md:text-6xl">Datasets</h1>
             <p className="section-subtitle text-lg md:text-xl max-w-3xl text-muted-foreground">
-              A curated collection of speech, vision, and safety datasets. Clean metadata, consistent formatting, and ready for immediate experimentation.
+              Datasets I've curated and published to support the ML community.
             </p>
           </div>
 
