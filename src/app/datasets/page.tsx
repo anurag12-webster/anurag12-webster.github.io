@@ -1,6 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Datasets | Anurag Kanade",
+  description: "Open-source datasets for ML research and development",
+};
 
 const datasets = [
   {
@@ -55,58 +61,69 @@ const datasets = [
 
 export default function DatasetsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="container mx-auto px-4 py-20">
-        <div className="mx-auto flex max-w-4xl flex-col gap-12">
-          <div className="space-y-3 text-left">
-            <h1 className="section-title">Datasets</h1>
-            <p className="section-subtitle md:max-w-3xl">
-              A compact library of speech, vision, and safety datasets built for practitioners. Clean metadata, consistent formatting, and ready for immediate experimentation.
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-16 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-16 space-y-3">
+            <h1 className="display-heading text-5xl md:text-6xl">Datasets</h1>
+            <p className="section-subtitle text-lg md:text-xl max-w-3xl text-muted-foreground">
+              A curated collection of speech, vision, and safety datasets. Clean metadata, consistent formatting, and ready for immediate experimentation.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {datasets.map((dataset) => (
-              <Card
+          {/* Datasets Grid - Masonry Style */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
+            {datasets.map((dataset, index) => (
+              <article
                 key={dataset.title}
-                className="p-0 shadow-[0_16px_70px_-40px_rgba(15,23,42,0.45)] transition-colors duration-200 hover:border-primary/35 hover:bg-muted/30 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.08]"
+                className={`group ${
+                  index === 0 ? 'md:col-span-2' : ''
+                } ${
+                  index === 3 ? 'lg:col-span-2' : ''
+                }`}
               >
-                <CardHeader className="space-y-4 border-b border-border/60 px-8 py-8 dark:border-white/10">
-                  <CardTitle className="text-2xl font-semibold">{dataset.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2 text-muted-foreground">
-                    {dataset.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-border/70 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] dark:border-white/20 dark:text-white/80"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col gap-5 px-8 pb-8 pt-6">
-                  <p className="card-subtext leading-7 dark:text-white/80">
-                    {dataset.description}
-                  </p>
-                  <ul className="space-y-2 rounded-2xl border border-dashed border-border/70 bg-muted/40 p-4 dark:border-white/15 dark:bg-white/[0.05]">
-                    {dataset.highlights.map((item) => (
-                      <li key={item} className="flex items-start gap-3 card-subtext dark:text-white/80">
-                        <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    asChild
-                    className="mt-auto inline-flex items-center gap-2 self-start rounded-full border-border/70 px-5 hover:border-primary/50 hover:bg-primary/10 dark:border-white/20 dark:text-white dark:hover:border-primary/40 dark:hover:bg-white/[0.12]"
-                    variant="outline"
-                  >
-                    <Link href={dataset.link} target="_blank" rel="noopener noreferrer">
-                      Explore on Hugging Face
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                <Link
+                  href={dataset.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                >
+                  <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <CardHeader className="space-y-4 pb-5">
+                      <div className="space-y-3">
+                        <CardTitle className="text-2xl md:text-3xl display-heading group-hover:text-primary transition-colors duration-200">
+                          {dataset.title}
+                        </CardTitle>
+
+                        <p className="text-muted-foreground text-base leading-relaxed">
+                          {dataset.description}
+                        </p>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="flex-1 space-y-5 pt-0">
+                      {/* Highlights */}
+                      <ul className="space-y-2.5">
+                        {dataset.highlights.map((item) => (
+                          <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                            <span className="mt-1.5 inline-flex h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                            <span className="leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* View Link */}
+                      <div className="pt-2 flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+                        <span>View on Hugging Face</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </article>
             ))}
           </div>
         </div>
