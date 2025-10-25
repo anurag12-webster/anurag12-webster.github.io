@@ -17,6 +17,8 @@ interface BlogPost {
   source: string;
   link: string;
   categories: string[];
+  // Optional for local posts populated at build time
+  readingTime?: string;
 }
 
 export function BlogClient({ posts }: { posts: BlogPost[] }) {
@@ -102,7 +104,9 @@ export function BlogClient({ posts }: { posts: BlogPost[] }) {
                           </time>
                           <span className="text-muted-foreground">·</span>
                           <span className="text-muted-foreground text-sm">
-                            {post.source === "local" ? (post as any).readingTime : calculateReadTime(post.content)}
+                            {post.source === "local" && post.readingTime
+                              ? post.readingTime
+                              : calculateReadTime(post.content)}
                           </span>
                           {post.source === "medium" && (
                             <>

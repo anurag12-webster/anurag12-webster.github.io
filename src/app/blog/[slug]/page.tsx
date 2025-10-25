@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { formatDate, calculateReadTime } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 
 interface BlogPostPageProps {
   params: Promise<{
