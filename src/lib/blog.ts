@@ -1,32 +1,13 @@
-import { getMediumPosts, getMediumPost } from './medium';
 import { getAllMDXPosts, getMDXPost, MDXPost } from './mdx';
 import { DEFAULTS } from './constants';
 
-interface MediumPost {
-  id: string;
-  title: string;
-  description: string;
-  content: string;
-  author: string;
-  pubDate: string;
-  link: string;
-  thumbnail: string;
-  categories: string[];
-  slug: string;
-  source: 'medium' | 'local';
-  hidden?: boolean;
-}
-
-export type BlogPost = MediumPost | MDXPost;
+export type BlogPost = MDXPost;
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
-    const [mediumPosts, mdxPosts] = await Promise.all([
-      getMediumPosts(),
-      getAllMDXPosts()
-    ]);
+    const mdxPosts = await getAllMDXPosts();
 
-    const allPosts = [...mediumPosts, ...mdxPosts]
+    const allPosts = mdxPosts
       .filter(post => !(post as { hidden?: boolean }).hidden)
       .sort((a, b) => {
         return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
@@ -44,11 +25,6 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     const mdxPost = getMDXPost(slug);
     if (mdxPost) {
       return mdxPost;
-    }
-
-    const mediumPost = await getMediumPost(slug);
-    if (mediumPost) {
-      return mediumPost;
     }
 
     return null;

@@ -93,8 +93,7 @@ export function BlogClient({ posts }: { posts: BlogPost[] }) {
                     className="group"
                   >
                     <Link
-                      href={post.source === 'medium' ? post.link : `/blog/${post.slug}`}
-                      {...(post.source === 'medium' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      href={`/blog/${post.slug}`}
                       className="block space-y-4"
                     >
                       <div className="space-y-3">
@@ -104,16 +103,8 @@ export function BlogClient({ posts }: { posts: BlogPost[] }) {
                           </time>
                           <span className="text-muted-foreground">·</span>
                           <span className="text-muted-foreground text-sm">
-                            {post.source === "local" && post.readingTime
-                              ? post.readingTime
-                              : calculateReadTime(post.content)}
+                            {post.readingTime || calculateReadTime(post.content)}
                           </span>
-                          {post.source === "medium" && (
-                            <>
-                              <span className="text-muted-foreground">·</span>
-                              <span className="text-green-600 dark:text-green-400 text-xs font-medium">Medium</span>
-                            </>
-                          )}
                         </div>
 
                         <h2 className="display-heading text-3xl md:text-4xl group-hover:text-primary transition-colors duration-200">

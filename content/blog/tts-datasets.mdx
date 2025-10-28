@@ -1,0 +1,63 @@
+---
+title: "Building TTS Datasets That Actually Work"
+description: "your model is only as good as your data - here's what you need to know about building high-quality TTS datasets"
+author: "Anurag Kanade"
+date: "2025-10-29"
+categories: ["Datasets", "TTS", "Data"]
+---
+
+Let's get one thing straight: your TTS model will be as good as the data you train it upon. You can use the best pre-trained SOTA models out there, but without a high-quality dataset, you can't get the model to speak naturally and lifelike.
+
+TTS (Text-to-Speech) models require a dataset with audio files and their respective transcription. The main advantage of TTS architecture is that you don't need to align the text transcriptions to the audio because the model can grasp the alignment process.
+
+While you consider creating a dataset on your own, there are plenty of open-source datasets from which you can refer while building your own TTS dataset.
+
+## Popular Datasets for TTS
+
+if you're just starting out or want to see how others have done it, here are some datasets worth looking at:
+
+### public datasets everyone uses:
+
+- [LJSpeech](https://keithito.com/LJ-Speech-Dataset/) - this one's pretty popular, single speaker, clean audio
+- [LibriTTS](https://www.openslr.org/60/) - multi-speaker dataset derived from LibriVox audiobooks
+- [TWEB](https://www.kaggle.com/datasets/bryanpark/the-world-english-bible-speech-dataset) - The World English Bible speech dataset
+
+### my own datasets you can check out:
+
+i've also built some TTS datasets that you might find useful, especially if you're working with non-English languages or specific use cases:
+
+- [Gujarati Female Speech](https://huggingface.co/datasets/edwixx/Gujrati_Female_SPeech) - 8 hours of clean single-speaker Gujarati audio, perfect if you're building ASR or TTS for regional Indian languages. recorded in controlled conditions with aligned transcripts.
+
+- [Brazilian Portuguese TTS](https://huggingface.co/datasets/edwixx/brazilian-portuguese-TTS) - around 150 hours of multi-speaker Brazilian Portuguese. this one's great because it covers different accents and speaking styles, all normalized and ready to train.
+
+- [Obama Voice Sample Dataset](https://huggingface.co/datasets/ModelsLab/Obama-Sample-Dataset) - 25+ minutes of Barack Obama's voice from public speeches, optimized for RVC (voice conversion) training. clean 24 kHz WAV files, production-ready.
+
+check out more datasets i've built on my [datasets page](/datasets) if you're interested.
+
+## Things to Consider While Building the Dataset
+
+### Noise-free
+Make sure the audio samples you have are noise-free. Background noise in your audio samples may lead your model not to learn well, and ultimately will not be able to learn good alignment. Even if it learns the alignment, final output will be much worse than you anticipated.
+
+### Consistency
+The audio sample you are using within your dataset should have the same formats (mp3, flac, opus, wav) and sampling rate which should be ideally between 16kHz-22kHz—a commonly used configuration for audio samples in a TTS dataset. If you have audios with very high quality and sampling rate, you have to consider normalizing the configs of your audios.
+
+### Naturalness
+Your model will learn what samples you feed into it. Therefore, if you expect to get a natural-sounding voice out of the model with all the speed, pitch, and intonation differences, the dataset should accommodate the same.
+
+### Diverse Phonemes
+Keep in mind that your dataset covers a good set of phonemes, depending on your use case. If phoneme coverage is low, the model will struggle to pronounce certain words. To overcome that issue, add diverse phonemes.
+
+### Correctness
+Before proceeding with training, make sure to filter out bad-quality transcripts, compare transcripts and audio lengths, and remove wrong or broken audio or text files.
+
+### Gaussian Distribution Over Different Audio Samples
+Do verify the distribution of clip lengths and make sure your dataset has a sufficient amount of short and long audio clips. Using too long clips may not fit into your GPU. At maximum, you can have 30-sec clips based on the size of compute power you have.
+
+## Additional Steps
+
+Other than the above, you can do these additional quality checks before training:
+
+- You can check the spectrogram of audio files to measure the noise level of the clips and find good audio processing parameters. If the spectrogram looks cluttered, especially in silent parts of the audio, the dataset might not be good for training your TTS model.
+
+- Also, you can analyze the dataset distribution in terms of clip and transcript lengths. In some outlier cases (the clip is too long but short text, or short clip but too long text), the second case might be there if you've tagged your data with models like Whisper, which is used popularly for speech recognition across multiple languages.
