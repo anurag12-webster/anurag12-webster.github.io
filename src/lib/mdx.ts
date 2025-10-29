@@ -16,7 +16,6 @@ export interface MDXPost {
   thumbnail: string;
   categories: string[];
   slug: string;
-  source: 'medium' | 'local';
   readingTime: string;
   hidden?: boolean;
 }
@@ -47,7 +46,6 @@ export function getAllMDXPosts(): MDXPost[] {
           thumbnail: data.thumbnail || DEFAULTS.PLACEHOLDER_IMAGE,
           categories: data.categories || [],
           slug: slug,
-          source: 'local' as const,
           readingTime: calculateReadingTime(content),
           hidden: data.hidden || false,
         };
@@ -84,7 +82,6 @@ export function getMDXPost(slug: string): MDXPost | null {
       thumbnail: data.thumbnail || DEFAULTS.PLACEHOLDER_IMAGE,
       categories: data.categories || [],
       slug: slug,
-      source: 'local' as const,
       readingTime: calculateReadingTime(content),
       hidden: data.hidden || false,
     };

@@ -2,10 +2,11 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { formatDate } from "@/lib/utils";
+import { ShareButton } from "@/components/share-button";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -44,16 +45,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const postUrl = `https://anuragkanade.com/blog/${slug}`;
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4">
-        <div className="py-6">
+        <div className="py-6 flex items-center justify-between">
           <Button variant="ghost" asChild size="sm" className="-ml-3">
             <Link href="/blog" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
               <ArrowLeft className="h-4 w-4" />
               Back
             </Link>
           </Button>
+          <ShareButton title={post.title} url={postUrl} />
         </div>
 
         <div className="max-w-2xl mx-auto pb-20">
@@ -89,40 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-foreground/80 prose-blockquote:my-8
               prose-img:rounded-2xl prose-img:shadow-sm prose-img:my-10
               dark:prose-invert">
-              {post.source === 'local' ? (
-                <MDXRemote source={post.content} />
-              ) : (
-                <div className="not-prose text-center py-16 px-6">
-                  <div className="max-w-md mx-auto space-y-6">
-                    <div className="flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h3 className="text-xl font-semibold text-foreground">Published on Medium</h3>
-                      <p className="text-muted-foreground text-base leading-relaxed">
-                        This article is available on Medium. Click below to read the full content.
-                      </p>
-                    </div>
-
-                    <Button size="lg" asChild className="claude-button-hover">
-                      <Link
-                        href={post.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        Read on Medium
-                        <ExternalLink className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              )}
+              <MDXRemote source={post.content} />
             </div>
           </article>
         </div>

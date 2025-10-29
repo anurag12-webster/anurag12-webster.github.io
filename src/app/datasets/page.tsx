@@ -9,6 +9,18 @@ export const metadata: Metadata = {
 
 const datasets = [
   {
+    title: "Triton Kernel Code Dataset",
+    description:
+      "A focused dataset of Triton kernel bodies and CUDA→Triton translation pairs (a few thousand examples) for teaching models to write GPU kernels.",
+    tags: ["GPU", "Triton", "CUDA", "Code Generation"],
+    link: "https://huggingface.co/datasets/edwixx/triton-code-dataset",
+    highlights: [
+      "Fill-in-the-middle examples for Triton kernel completion",
+      "CUDA to Triton translation pairs with proper provenance",
+      "Cleaned, deduped, and ready for fine-tuning code models",
+    ],
+  },
+  {
     title: "Aesthetic Images",
     description:
       "7.9k+ carefully filtered, high-aesthetic images collected for training and benchmarking diffusion or image-text alignment models.",
