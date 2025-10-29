@@ -73,8 +73,7 @@ export default async function Home() {
                 {recentPosts.map((post) => (
                   <Link
                     key={post.id}
-                    href={post.source === 'medium' ? post.link : `/blog/${post.slug}`}
-                    {...(post.source === 'medium' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    href={`/blog/${post.slug}`}
                     className="block group"
                   >
                     <article className="border-b border-border/30 pb-4">
@@ -138,14 +137,6 @@ export default async function Home() {
                                 {post.title}
                               </Link>
                             </h3>
-                            {post.source === 'medium' && (
-                              <div className="flex items-center gap-1 px-2 py-1 bg-green-100 dark:bg-green-900/20 rounded-full">
-                                <svg className="w-3 h-3 text-green-600 dark:text-green-400" viewBox="0 0 24 24" fill="currentColor">
-                                  <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
-                                </svg>
-                                <span className="text-xs text-green-600 dark:text-green-400 font-medium">Medium</span>
-                              </div>
-                            )}
                           </div>
                           <p className="card-subtext mb-4">
                             {post.description}
@@ -153,11 +144,11 @@ export default async function Home() {
                           <div className="flex justify-between items-center">
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                               <span>{formatDate(post.pubDate)}</span>
-                              <span>{post.source === 'local' ? (post as { readingTime: string }).readingTime : calculateReadTime(post.content)}</span>
+                              <span>{post.readingTime || calculateReadTime(post.content)}</span>
                             </div>
                             <Button variant="ghost" size="sm" asChild className="group-hover:bg-primary/10 claude-button-hover">
-                              <Link href={post.source === 'medium' ? post.link : `/blog/${post.slug}`} {...(post.source === 'medium' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                                {post.source === 'medium' ? 'Read on Medium →' : 'Read More →'}
+                              <Link href={`/blog/${post.slug}`}>
+                                Read More →
                               </Link>
                             </Button>
                           </div>

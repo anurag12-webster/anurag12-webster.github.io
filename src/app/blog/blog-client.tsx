@@ -14,10 +14,8 @@ interface BlogPost {
   pubDate: string;
   slug: string;
   thumbnail?: string;
-  source: string;
   link: string;
   categories: string[];
-  // Optional for local posts populated at build time
   readingTime?: string;
 }
 
