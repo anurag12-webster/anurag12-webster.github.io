@@ -6,9 +6,10 @@ import { Share2 } from 'lucide-react';
 interface ShareButtonProps {
   title: string;
   url: string;
+  iconOnly?: boolean;
 }
 
-export function ShareButton({ title, url }: ShareButtonProps) {
+export function ShareButton({ title, url, iconOnly = false }: ShareButtonProps) {
   const handleShare = () => {
     const tweetText = encodeURIComponent(title);
     const tweetUrl = encodeURIComponent(url);
@@ -20,11 +21,11 @@ export function ShareButton({ title, url }: ShareButtonProps) {
     <Button
       onClick={handleShare}
       variant="outline"
-      size="sm"
-      className="gap-2"
+      size={iconOnly ? "icon" : "sm"}
+      className={iconOnly ? "rounded-full" : "gap-2 rounded-full"}
     >
       <Share2 className="h-4 w-4" />
-      Share on X
+      {!iconOnly && <span className="hidden sm:inline">Share on X</span>}
     </Button>
   );
 }

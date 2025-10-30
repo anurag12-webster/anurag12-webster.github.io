@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="antialiased flex flex-col min-h-screen">
         <ThemeProvider>
           <Navigation />
-          <main className="pt-20 flex-1">{children}</main>
+          <main className="pt-20 flex-1 [.blog-post-page_&]:pt-0">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

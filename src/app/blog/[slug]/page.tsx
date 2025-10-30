@@ -6,6 +6,8 @@ import { ArrowLeft } from "lucide-react";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { formatDate } from "@/lib/utils";
+import { ViewCounter } from "@/components/view-counter";
+import { UpvoteButton } from "@/components/upvote-button";
 import { ShareButton } from "@/components/share-button";
 
 interface BlogPostPageProps {
@@ -51,13 +53,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4">
         <div className="py-6 flex items-center justify-between">
-          <Button variant="ghost" asChild size="sm" className="-ml-3">
+          <Button variant="ghost" asChild size="sm" className="-ml-3 hidden md:flex">
             <Link href="/blog" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
               <ArrowLeft className="h-4 w-4" />
               Back
             </Link>
           </Button>
-          <ShareButton title={post.title} url={postUrl} />
+          <div className="hidden md:flex items-center gap-2 ml-auto">
+            <UpvoteButton slug={slug} />
+            <ShareButton title={post.title} url={postUrl} iconOnly />
+          </div>
         </div>
 
         <div className="max-w-2xl mx-auto pb-20">
@@ -68,10 +73,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.title}
                 </h1>
 
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
                   <time dateTime={post.pubDate} className="font-medium">
                     {formatDate(post.pubDate)}
                   </time>
+                  <span>•</span>
+                  <ViewCounter slug={slug} />
                 </div>
               </div>
 
@@ -94,6 +101,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-img:rounded-2xl prose-img:shadow-sm prose-img:my-10
               dark:prose-invert">
               <MDXRemote source={post.content} />
+            </div>
+
+            {/* Mobile: Action buttons at end of article */}
+            <div className="md:hidden mt-12 flex items-center gap-2">
+              <UpvoteButton slug={slug} />
+              <ShareButton title={post.title} url={postUrl} iconOnly />
             </div>
           </article>
         </div>

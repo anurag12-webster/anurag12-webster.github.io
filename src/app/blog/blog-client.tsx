@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { formatDate, calculateReadTime } from "@/lib/utils";
 import { Search } from "lucide-react";
+import { BlogCardViews } from "@/components/blog-card-views";
 
 interface BlogPost {
   id: string;
@@ -95,14 +96,16 @@ export function BlogClient({ posts }: { posts: BlogPost[] }) {
                       className="block space-y-4"
                     >
                       <div className="space-y-3">
-                        <div className="flex items-center gap-3 text-sm">
-                          <time dateTime={post.pubDate} className="text-muted-foreground font-medium">
+                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                          <time dateTime={post.pubDate} className="font-medium">
                             {formatDate(post.pubDate)}
                           </time>
-                          <span className="text-muted-foreground">·</span>
-                          <span className="text-muted-foreground text-sm">
+                          <span>·</span>
+                          <span>
                             {post.readingTime || calculateReadTime(post.content)}
                           </span>
+                          <span>·</span>
+                          <BlogCardViews slug={post.slug} />
                         </div>
 
                         <h2 className="display-heading text-3xl md:text-4xl group-hover:text-primary transition-colors duration-200">
