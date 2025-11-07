@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/contexts/theme-context";
+import { Analytics } from "@vercel/analytics/react";
 
         export const metadata: Metadata = {
           title: "Ed | log",
@@ -25,6 +26,7 @@ export default function RootLayout({
           <main className="pt-20 flex-1 [.blog-post-page_&]:pt-0">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
