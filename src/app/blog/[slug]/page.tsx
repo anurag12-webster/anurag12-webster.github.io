@@ -37,9 +37,22 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  const ogImageUrl = `https://anuragkanade.com/api/og?title=${encodeURIComponent(post.title)}`;
+
   return {
     title: `${post.title} | Anurag Kanade`,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [{ url: ogImageUrl }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [ogImageUrl],
+    },
   };
 }
 
