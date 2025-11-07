@@ -236,6 +236,10 @@
     @apply rounded-2xl shadow-sm my-8;
   }
 
+  .figure-caption {
+    @apply text-center text-sm text-muted-foreground italic -mt-6 mb-8;
+  }
+
   .prose hr {
     @apply border-border my-8;
   }

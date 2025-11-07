@@ -29,7 +29,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const initialTheme = savedTheme || systemTheme;
     
     setThemeState(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
     
     // Listen for system theme changes
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -38,7 +42,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       if (!localStorage.getItem("theme")) {
         const newTheme = e.matches ? "dark" : "light";
         setThemeState(newTheme);
-        document.documentElement.classList.toggle("dark", newTheme === "dark");
+        if (newTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
       }
     };
     
@@ -50,7 +58,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+
+    // Use add/remove instead of toggle for better performance
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   const resetToSystemTheme = () => {
@@ -58,7 +72,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const systemTheme = prefersDark ? "dark" : "light";
     setThemeState(systemTheme);
-    document.documentElement.classList.toggle("dark", systemTheme === "dark");
+
+    if (systemTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   const toggleTheme = () => {

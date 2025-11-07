@@ -9,6 +9,10 @@ import { formatDate } from "@/lib/utils";
 import { ViewCounter } from "@/components/view-counter";
 import { UpvoteButton } from "@/components/upvote-button";
 import { ShareButton } from "@/components/share-button";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { AudioPlayer } from '@/components/audio-player';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -100,7 +104,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-foreground/80 prose-blockquote:my-8
               prose-img:rounded-2xl prose-img:shadow-sm prose-img:my-10
               dark:prose-invert">
-              <MDXRemote source={post.content} />
+              <MDXRemote
+                source={post.content}
+                options={{
+                  mdxOptions: {
+                    remarkPlugins: [remarkMath],
+                    rehypePlugins: [rehypeKatex],
+                  },
+                }}
+                components={{
+                  AudioPlayer,
+                }}
+              />
             </div>
 
             {/* Mobile: Action buttons at end of article */}
