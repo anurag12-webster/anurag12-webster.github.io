@@ -1,20 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { BarChart3 } from "lucide-react";
 
 interface BlogCardViewsProps {
   slug: string;
 }
 
-export function BlogCardViews({ slug }: BlogCardViewsProps) {
+export const BlogCardViews = memo(function BlogCardViews({ slug }: BlogCardViewsProps) {
   const [views, setViews] = useState<number>(0);
 
   useEffect(() => {
     fetch(`/api/views/${slug}`)
       .then((res) => res.json())
       .then((data) => setViews(data.views))
-      .catch((err) => console.error('Error fetching views:', err));
+      .catch(() => {/* Silent fail */});
   }, [slug]);
 
   return (
@@ -23,4 +23,4 @@ export function BlogCardViews({ slug }: BlogCardViewsProps) {
       <span>{views}</span>
     </div>
   );
-}
+});

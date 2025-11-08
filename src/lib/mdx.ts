@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { CONTENT_PATHS, DEFAULTS, READING_TIME } from './constants';
+import { CONTENT_PATHS, DEFAULTS } from './constants';
+import { calculateReadTime } from './utils';
 
 const postsDirectory = path.join(process.cwd(), CONTENT_PATHS.BLOG_POSTS);
 
@@ -46,7 +47,7 @@ export function getAllMDXPosts(): MDXPost[] {
           thumbnail: data.thumbnail || DEFAULTS.PLACEHOLDER_IMAGE,
           categories: data.categories || [],
           slug: slug,
-          readingTime: calculateReadingTime(content),
+          readingTime: calculateReadTime(content),
           hidden: data.hidden || false,
         };
       });
@@ -54,8 +55,7 @@ export function getAllMDXPosts(): MDXPost[] {
     return allPostsData.sort((a, b) => {
       return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
     });
-  } catch (error) {
-    console.error('Error reading MDX posts:', error);
+  } catch {
     return [];
   }
 }
@@ -82,17 +82,11 @@ export function getMDXPost(slug: string): MDXPost | null {
       thumbnail: data.thumbnail || DEFAULTS.PLACEHOLDER_IMAGE,
       categories: data.categories || [],
       slug: slug,
-      readingTime: calculateReadingTime(content),
+      readingTime: calculateReadTime(content),
       hidden: data.hidden || false,
     };
-  } catch (error) {
-    console.error('Error reading MDX post:', error);
+  } catch {
     return null;
   }
 }
 
-function calculateReadingTime(content: string): string {
-  const wordCount = content.split(/\s+/).length;
-  const minutes = Math.ceil(wordCount / READING_TIME.WORDS_PER_MINUTE);
-  return `${minutes} min read`;
-}

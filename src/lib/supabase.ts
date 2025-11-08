@@ -14,13 +14,11 @@ export async function getUpvotes(slug: string): Promise<number> {
       .single();
 
     if (error && error.code !== 'PGRST116') {
-      console.error('Error getting upvotes:', error);
       return 0;
     }
 
     return data?.count ?? 0;
-  } catch (error) {
-    console.error('Error getting upvotes:', error);
+  } catch {
     return 0;
   }
 }
@@ -49,9 +47,8 @@ export async function incrementUpvotes(slug: string): Promise<number> {
     }
 
     return 1;
-  } catch (error) {
-    console.error('Error incrementing upvotes:', error);
-    throw error;
+  } catch {
+    return 0;
   }
 }
 
@@ -64,13 +61,11 @@ export async function getViews(slug: string): Promise<number> {
       .single();
 
     if (error && error.code !== 'PGRST116') {
-      console.error('Error getting views:', error);
       return 0;
     }
 
     return data?.count ?? 0;
-  } catch (error) {
-    console.error('Error getting views:', error);
+  } catch {
     return 0;
   }
 }
@@ -99,8 +94,7 @@ export async function incrementViews(slug: string): Promise<number> {
     }
 
     return 1;
-  } catch (error) {
-    console.error('Error incrementing views:', error);
-    throw error;
+  } catch {
+    return 0;
   }
 }

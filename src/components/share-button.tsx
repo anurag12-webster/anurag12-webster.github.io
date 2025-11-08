@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Share2 } from 'lucide-react';
+import { memo } from 'react';
 
 interface ShareButtonProps {
   title: string;
@@ -9,7 +10,7 @@ interface ShareButtonProps {
   iconOnly?: boolean;
 }
 
-export function ShareButton({ title, url, iconOnly = false }: ShareButtonProps) {
+export const ShareButton = memo(function ShareButton({ title, url, iconOnly = false }: ShareButtonProps) {
   const handleShare = () => {
     const tweetText = encodeURIComponent(title);
     const tweetUrl = encodeURIComponent(url);
@@ -28,4 +29,4 @@ export function ShareButton({ title, url, iconOnly = false }: ShareButtonProps) 
       {!iconOnly && <span className="hidden sm:inline">Share on X</span>}
     </Button>
   );
-}
+});

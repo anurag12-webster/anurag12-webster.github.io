@@ -120,15 +120,22 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: var(--font-sans), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 400;
     letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     letter-spacing: -0.015em;
   }
   h1 { font-weight: 600; line-height: 1.1; }
@@ -142,7 +149,7 @@
 @layer components {
   /* Display heading - Claude/Anthropic style */
   .display-heading {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -156,7 +163,7 @@
 
   /* Anthropic body text style */
   .karla-text {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
@@ -166,7 +173,7 @@
   
   .prose h1 {
     @apply text-3xl mb-4 mt-8 text-foreground;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: 1.2;
@@ -174,7 +181,7 @@
 
   .prose h2 {
     @apply text-2xl mb-3 mt-6 text-foreground;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: 1.25;
@@ -182,7 +189,7 @@
 
   .prose h3 {
     @apply text-xl mb-2 mt-4 text-foreground;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.3;

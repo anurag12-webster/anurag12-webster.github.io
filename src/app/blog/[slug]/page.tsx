@@ -13,6 +13,8 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { AudioPlayer } from '@/components/audio-player';
+import { ImageLightbox } from '@/components/image-lightbox';
+import { SITE } from '@/lib/constants';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -37,10 +39,10 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
-  const ogImageUrl = `https://anuragkanade.com/api/og?title=${encodeURIComponent(post.title)}`;
+  const ogImageUrl = `${SITE.URL}/api/og?title=${encodeURIComponent(post.title)}`;
 
   return {
-    title: `${post.title} | Anurag Kanade`,
+    title: `${post.title} | ${SITE.NAME}`,
     description: post.description,
     openGraph: {
       title: post.title,
@@ -64,7 +66,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const postUrl = `https://anuragkanade.com/blog/${slug}`;
+  const postUrl = `${SITE.URL}/blog/${slug}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -84,9 +86,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <div className="max-w-2xl mx-auto pb-20">
           <article>
-            <header className="mb-16 text-center space-y-8">
-              <div className="space-y-6">
-                <h1 className="display-heading text-4xl md:text-5xl lg:text-6xl leading-tight px-4">
+            <header className="mb-12 md:mb-16 text-center space-y-6 md:space-y-8">
+              <div className="space-y-4 md:space-y-6">
+                <h1 className="display-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight px-2 sm:px-4">
                   {post.title}
                 </h1>
 
@@ -100,6 +102,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               <Separator className="max-w-xl mx-auto" />
+
+              {post.thumbnail && post.thumbnail !== '/placeholder-blog.jpg' && (
+                <div className="mt-8 mb-8 -mx-4 sm:mx-0">
+                  <ImageLightbox
+                    src={post.thumbnail}
+                    alt={post.title}
+                  />
+                </div>
+              )}
             </header>
 
             <div className="prose prose-lg max-w-none px-4
@@ -127,6 +138,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 }}
                 components={{
                   AudioPlayer,
+                  img: ImageLightbox,
                 }}
               />
             </div>

@@ -14,8 +14,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       });
 
     return allPosts;
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
+  } catch {
     return [];
   }
 }
@@ -28,8 +27,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     }
 
     return null;
-  } catch (error) {
-    console.error('Error fetching blog post:', error);
+  } catch {
     return null;
   }
 }

@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { Eye } from "lucide-react";
 
 interface ViewCounterProps {
   slug: string;
 }
 
-export function ViewCounter({ slug }: ViewCounterProps) {
+export const ViewCounter = memo(function ViewCounter({ slug }: ViewCounterProps) {
   const [views, setViews] = useState<number>(0);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function ViewCounter({ slug }: ViewCounterProps) {
     fetch(`/api/views/${slug}`)
       .then((res) => res.json())
       .then((data) => setViews(data.views))
-      .catch((err) => console.error('Error fetching views:', err));
+      .catch(() => {/* Silent fail */});
 
     // Increment only if not viewed in this session
     if (!hasViewed) {
@@ -30,7 +30,7 @@ export function ViewCounter({ slug }: ViewCounterProps) {
           setViews(data.views);
           sessionStorage.setItem(viewKey, 'true');
         })
-        .catch((err) => console.error('Error tracking view:', err));
+        .catch(() => {/* Silent fail */});
     }
   }, [slug]);
 
@@ -40,4 +40,4 @@ export function ViewCounter({ slug }: ViewCounterProps) {
       <span>{views} views</span>
     </div>
   );
-}
+});

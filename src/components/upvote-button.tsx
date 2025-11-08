@@ -19,7 +19,7 @@ export function UpvoteButton({ slug }: UpvoteButtonProps) {
     fetch(`/api/upvote/${slug}`)
       .then((res) => res.json())
       .then((data) => setUpvotes(data.upvotes))
-      .catch((err) => console.error('Error fetching upvotes:', err));
+      .catch(() => {/* Silent fail */});
 
     // Check if user has already upvoted (using localStorage)
     if (typeof window !== 'undefined') {
