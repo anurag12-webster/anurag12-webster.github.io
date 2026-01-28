@@ -10,6 +10,7 @@ import { ViewCounter } from "@/components/view-counter";
 import { UpvoteButton } from "@/components/upvote-button";
 import { ShareButton } from "@/components/share-button";
 import remarkMath from 'remark-math';
+import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { AudioPlayer } from '@/components/audio-player';
@@ -127,12 +128,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               prose-ul:my-6 prose-ol:my-6
               prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-foreground/80 prose-blockquote:my-8
               prose-img:rounded-2xl prose-img:shadow-sm prose-img:my-10
+              prose-table:border prose-table:border-border prose-table:w-full prose-table:my-8 prose-table:rounded-lg prose-table:overflow-hidden
+              prose-thead:border-b-2 prose-thead:border-border prose-thead:bg-muted/50
+              prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:font-semibold prose-th:border prose-th:border-border
+              prose-td:px-4 prose-td:py-3 prose-td:border prose-td:border-border
+              prose-tr:border-b prose-tr:border-border prose-tbody:divide-y prose-tbody:divide-border
               dark:prose-invert">
               <MDXRemote
                 source={post.content}
                 options={{
                   mdxOptions: {
-                    remarkPlugins: [remarkMath],
+                    remarkPlugins: [remarkMath, remarkGfm],
                     rehypePlugins: [rehypeKatex],
                   },
                 }}

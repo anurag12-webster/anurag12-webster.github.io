@@ -250,6 +250,36 @@
   .prose hr {
     @apply border-border my-8;
   }
+
+  /* Table styles with visible borders - responsive */
+  .prose table {
+    @apply w-full my-8 border-collapse border border-border rounded-lg overflow-hidden block overflow-x-auto;
+  }
+
+  .prose thead {
+    @apply bg-muted/50 border-b-2 border-border;
+  }
+
+  .prose th {
+    @apply px-3 py-2 sm:px-4 sm:py-3 text-left font-semibold border border-border text-sm sm:text-base whitespace-nowrap;
+  }
+
+  .prose td {
+    @apply px-3 py-2 sm:px-4 sm:py-3 border border-border text-sm sm:text-base;
+  }
+
+  .prose tbody tr {
+    @apply border-b border-border;
+  }
+
+  .prose tbody tr:last-child {
+    @apply border-b-0;
+  }
+
+  /* Wrapper for horizontal scroll on mobile */
+  .prose > div:has(table) {
+    @apply overflow-x-auto -mx-4 px-4;
+  }
   
   /* Claude smooth transitions */
   .transition-smooth {
