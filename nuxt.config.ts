@@ -13,6 +13,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       title: 'Anurag Kanade',
       meta: [
         { charset: 'utf-8' },
