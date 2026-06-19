@@ -2,7 +2,7 @@
   <div :class="{ dark: isDark }">
     <nav>
       <div class="nav-inner">
-        <NuxtLink to="/" class="nav-logo"><strong>Anurag</strong> Kanade</NuxtLink>
+        <NuxtLink to="/" class="nav-logo">Anurag Kanade</NuxtLink>
         <div style="display: flex; align-items: center; gap: 1.5rem;">
           <ul class="nav-links">
             <li><NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }">Blog</NuxtLink></li>

@@ -1,0 +1,92 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="600" fill="#1a1a1a">Attention direction decides when separation appears</text>
+
+  <!-- LEFT: causal attention -->
+  <g>
+    <text x="220" y="68" text-anchor="middle" font-size="15" font-weight="600" fill="#1a1a1a">causal (autoregressive)</text>
+
+    <!-- tokens -->
+    <g font-size="12">
+      <circle cx="90"  cy="110" r="16" fill="#ddd"/><text x="90" y="115" text-anchor="middle">t1</text>
+      <circle cx="170" cy="110" r="16" fill="#ddd"/><text x="170" y="115" text-anchor="middle">t2</text>
+      <circle cx="250" cy="110" r="16" fill="#ddd"/><text x="250" y="115" text-anchor="middle">t3</text>
+      <circle cx="330" cy="110" r="16" fill="#ddd"/><text x="330" y="115" text-anchor="middle">t4</text>
+      <circle cx="410" cy="110" r="16" fill="#444"/><text x="410" y="115" text-anchor="middle" fill="#fff">t5</text>
+    </g>
+    <!-- forward-only arrows (each token attends back to earlier ones) -->
+    <g stroke="#999" stroke-width="1.3" fill="none" marker-end="url(#arrowc)">
+      <path d="M170 124 Q130 150 96 122"/>
+      <path d="M250 124 Q190 160 96 122"/>
+      <path d="M250 124 Q220 150 176 122"/>
+      <path d="M330 124 Q230 170 96 122"/>
+      <path d="M330 124 Q270 155 256 122"/>
+      <path d="M410 124 Q260 180 96 122"/>
+      <path d="M410 124 Q310 160 336 122"/>
+    </g>
+    <defs>
+      <marker id="arrowc" markerWidth="8" markerHeight="8" refX="5" refY="2.5" orient="auto">
+        <path d="M0,0 L5,2.5 L0,5 Z" fill="#999"/>
+      </marker>
+    </defs>
+
+    <text x="220" y="165" text-anchor="middle" font-size="12" fill="#777">info only flows left → right</text>
+
+    <!-- layer stack showing early separation -->
+    <g>
+      <rect x="60" y="195" width="320" height="14" fill="#e74c3c" opacity="0.75"/>
+      <rect x="60" y="213" width="320" height="14" fill="#e98a78" opacity="0.6"/>
+      <rect x="60" y="231" width="320" height="14" fill="#f0b3a4" opacity="0.5"/>
+      <rect x="60" y="249" width="320" height="14" fill="#f5cfc4" opacity="0.4"/>
+      <rect x="60" y="267" width="320" height="14" fill="#f8e0d8" opacity="0.3"/>
+      <text x="395" y="206" font-size="11" fill="#555">layer 2</text>
+      <text x="395" y="278" font-size="11" fill="#555">layer 30</text>
+    </g>
+    <text x="220" y="305" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="600">refusal direction separates early</text>
+    <text x="220" y="322" text-anchor="middle" font-size="12" fill="#555">last token already "knows" by layer ~2–11</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="450" y1="60" x2="450" y2="360" stroke="#ddd" stroke-width="1"/>
+
+  <!-- RIGHT: bidirectional attention -->
+  <g>
+    <text x="680" y="68" text-anchor="middle" font-size="15" font-weight="600" fill="#1a1a1a">bidirectional (BERT-like)</text>
+
+    <g font-size="12">
+      <circle cx="550" cy="110" r="16" fill="#ddd"/><text x="550" y="115" text-anchor="middle">t1</text>
+      <circle cx="630" cy="110" r="16" fill="#ddd"/><text x="630" y="115" text-anchor="middle">t2</text>
+      <circle cx="710" cy="110" r="16" fill="#ddd"/><text x="710" y="115" text-anchor="middle">t3</text>
+      <circle cx="790" cy="110" r="16" fill="#ddd"/><text x="790" y="115" text-anchor="middle">t4</text>
+      <circle cx="870" cy="110" r="16" fill="#ddd"/><text x="870" y="115" text-anchor="middle">t5</text>
+    </g>
+    <!-- fully connected both directions -->
+    <g stroke="#999" stroke-width="1.1" fill="none">
+      <path d="M566 110 L614 110"/>
+      <path d="M646 110 L694 110"/>
+      <path d="M726 110 L774 110"/>
+      <path d="M806 110 L854 110"/>
+      <path d="M566 102 Q640 70 694 102"/>
+      <path d="M646 102 Q720 70 774 102"/>
+      <path d="M726 102 Q800 70 854 102"/>
+      <path d="M566 118 Q720 160 854 118"/>
+    </g>
+
+    <text x="680" y="165" text-anchor="middle" font-size="12" fill="#777">every token sees every token, always</text>
+
+    <!-- layer stack showing late separation -->
+    <g>
+      <rect x="520" y="195" width="320" height="14" fill="#fbeee9" opacity="0.5"/>
+      <rect x="520" y="213" width="320" height="14" fill="#fbeee9" opacity="0.5"/>
+      <rect x="520" y="231" width="320" height="14" fill="#f8d9cd" opacity="0.55"/>
+      <rect x="520" y="249" width="320" height="14" fill="#f0a591" opacity="0.7"/>
+      <rect x="520" y="267" width="320" height="14" fill="#e74c3c" opacity="0.85"/>
+      <text x="855" y="206" font-size="11" fill="#555">layer 0</text>
+      <text x="855" y="278" font-size="11" fill="#555">layer 32</text>
+    </g>
+    <text x="680" y="305" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="600">refusal direction separates late</text>
+    <text x="680" y="322" text-anchor="middle" font-size="12" fill="#555">stays tangled until the final layer</text>
+  </g>
+
+  <text x="450" y="395" text-anchor="middle" font-size="13" fill="#333">same underlying phenomenon, different layer at which it becomes linearly visible</text>
+</svg>

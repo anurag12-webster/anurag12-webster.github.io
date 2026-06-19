@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="600" fill="#1a1a1a">The refusal direction, geometrically</text>
+
+  <!-- Left panel: activation space with two clusters -->
+  <g>
+    <rect x="40" y="60" width="380" height="300" fill="none" stroke="#ccc" stroke-width="1"/>
+    <text x="230" y="55" text-anchor="middle" font-size="14" fill="#555">activation space (one layer)</text>
+
+    <!-- harmless cluster (green) -->
+    <circle cx="120" cy="160" r="5" fill="#2e8b2e"/>
+    <circle cx="145" cy="140" r="5" fill="#2e8b2e"/>
+    <circle cx="100" cy="195" r="5" fill="#2e8b2e"/>
+    <circle cx="150" cy="200" r="5" fill="#2e8b2e"/>
+    <circle cx="115" cy="225" r="5" fill="#2e8b2e"/>
+    <circle cx="160" cy="165" r="5" fill="#2e8b2e"/>
+
+    <!-- harmless mean -->
+    <circle cx="130" cy="180" r="8" fill="none" stroke="#2e8b2e" stroke-width="2.5"/>
+    <text x="130" y="255" text-anchor="middle" font-size="13" fill="#2e8b2e">mean(h_harmless)</text>
+
+    <!-- harmful cluster (red) -->
+    <g stroke="#c0392b" stroke-width="2.2">
+      <path d="M310 240 L322 252 M322 240 L310 252"/>
+      <path d="M340 270 L352 282 M352 270 L340 282"/>
+      <path d="M290 285 L302 297 M302 285 L290 297"/>
+      <path d="M345 220 L357 232 M357 220 L345 232"/>
+      <path d="M320 300 L332 312 M332 300 L320 312"/>
+      <path d="M360 250 L372 262 M372 250 L360 262"/>
+    </g>
+
+    <!-- harmful mean -->
+    <circle cx="330" cy="265" r="8" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="330" y="335" text-anchor="middle" font-size="13" fill="#c0392b">mean(h_harmful)</text>
+
+    <!-- the r vector -->
+    <line x1="130" y1="180" x2="330" y2="265" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+    <text x="230" y="205" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a1a">r</text>
+  </g>
+
+  <!-- arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- formula -->
+  <text x="230" y="395" text-anchor="middle" font-size="14" fill="#333" font-family="Menlo, monospace">r = mean(h_harmful) − mean(h_harmless)</text>
+
+  <!-- Right panel: before/after projection -->
+  <g>
+    <rect x="480" y="60" width="380" height="300" fill="none" stroke="#ccc" stroke-width="1"/>
+    <text x="670" y="55" text-anchor="middle" font-size="14" fill="#555">after projecting out r</text>
+
+    <!-- collapsed onto hyperplane perpendicular to r -->
+    <line x1="540" y1="320" x2="800" y2="120" stroke="#999" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="800" y="105" font-size="12" fill="#999" text-anchor="end">hyperplane ⊥ r̂</text>
+
+    <!-- harmless points collapsed near plane -->
+    <circle cx="600" cy="270" r="5" fill="#2e8b2e"/>
+    <circle cx="615" cy="255" r="5" fill="#2e8b2e"/>
+    <circle cx="590" cy="280" r="5" fill="#2e8b2e"/>
+    <circle cx="625" cy="245" r="5" fill="#2e8b2e"/>
+    <circle cx="605" cy="260" r="5" fill="#2e8b2e"/>
+    <circle cx="618" cy="275" r="5" fill="#2e8b2e"/>
+
+    <!-- harmful points collapsed onto same region -->
+    <g stroke="#c0392b" stroke-width="2.2">
+      <path d="M598 263 L610 275 M610 263 L598 275"/>
+      <path d="M620 250 L632 262 M632 250 L620 262"/>
+      <path d="M605 280 L617 292 M617 280 L605 292"/>
+      <path d="M612 240 L624 252 M624 240 L612 252"/>
+      <path d="M630 268 L642 280 M642 268 L630 280"/>
+    </g>
+
+    <text x="670" y="335" text-anchor="middle" font-size="13" fill="#333">harmful and harmless now overlap —</text>
+    <text x="670" y="352" text-anchor="middle" font-size="13" fill="#333">the model can no longer tell them apart</text>
+  </g>
+</svg>

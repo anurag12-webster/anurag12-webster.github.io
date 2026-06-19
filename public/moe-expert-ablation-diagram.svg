@@ -1,0 +1,82 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="600" fill="#1a1a1a">One direction, but copied across experts</text>
+
+  <!-- shared token/router -->
+  <circle cx="450" cy="80" r="18" fill="#444"/>
+  <text x="450" y="85" text-anchor="middle" font-size="11" fill="#fff">tok</text>
+  <text x="450" y="115" text-anchor="middle" font-size="13" fill="#555">router picks 2 of 8 experts</text>
+
+  <!-- LEFT: ablate layer output only -->
+  <g>
+    <text x="220" y="150" text-anchor="middle" font-size="14" font-weight="600" fill="#c0392b">✗ ablate layer output only</text>
+
+    <!-- 8 experts -->
+    <g font-size="11">
+      <!-- active experts (2) get the ablation arrow visually but direction persists in inactive ones -->
+      <rect x="80"  y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="110" y="214" text-anchor="middle" fill="#2e8b2e">expert 1*</text>
+
+      <rect x="150" y="190" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="180" y="214" text-anchor="middle" fill="#888">expert 2</text>
+
+      <rect x="220" y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="250" y="214" text-anchor="middle" fill="#2e8b2e">expert 3*</text>
+
+      <rect x="290" y="190" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="320" y="214" text-anchor="middle" fill="#888">expert 4</text>
+
+      <rect x="115" y="245" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="145" y="269" text-anchor="middle" fill="#888">expert 5</text>
+
+      <rect x="185" y="245" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="215" y="269" text-anchor="middle" fill="#888">expert 6</text>
+
+      <rect x="255" y="245" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="285" y="269" text-anchor="middle" fill="#888">expert 7</text>
+
+      <rect x="325" y="245" width="60" height="40" rx="4" fill="#fdf2e3" stroke="#bbb" stroke-width="1.5"/>
+      <text x="355" y="269" text-anchor="middle" fill="#888">expert 8</text>
+    </g>
+    <text x="220" y="315" text-anchor="middle" font-size="12" fill="#555">* = active this token, ablation applied</text>
+    <text x="220" y="335" text-anchor="middle" font-size="12" fill="#c0392b">direction still lives in experts 2,4,5,6,7,8 —</text>
+    <text x="220" y="353" text-anchor="middle" font-size="12" fill="#c0392b">router just activates one of them next time</text>
+  </g>
+
+  <!-- RIGHT: ablate every expert slice -->
+  <g>
+    <text x="680" y="150" text-anchor="middle" font-size="14" font-weight="600" fill="#2e8b2e">✓ ablate every expert slice</text>
+
+    <g font-size="11">
+      <rect x="540" y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="570" y="214" text-anchor="middle" fill="#2e8b2e">expert 1</text>
+
+      <rect x="610" y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="640" y="214" text-anchor="middle" fill="#2e8b2e">expert 2</text>
+
+      <rect x="680" y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="710" y="214" text-anchor="middle" fill="#2e8b2e">expert 3</text>
+
+      <rect x="750" y="190" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="780" y="214" text-anchor="middle" fill="#2e8b2e">expert 4</text>
+
+      <rect x="575" y="245" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="605" y="269" text-anchor="middle" fill="#2e8b2e">expert 5</text>
+
+      <rect x="645" y="245" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="675" y="269" text-anchor="middle" fill="#2e8b2e">expert 6</text>
+
+      <rect x="715" y="245" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="745" y="269" text-anchor="middle" fill="#2e8b2e">expert 7</text>
+
+      <rect x="785" y="245" width="60" height="40" rx="4" fill="#e8f4e8" stroke="#2e8b2e" stroke-width="2"/>
+      <text x="815" y="269" text-anchor="middle" fill="#2e8b2e">expert 8</text>
+    </g>
+    <text x="680" y="315" text-anchor="middle" font-size="12" fill="#555">every expert gets r̂ projected out independently —</text>
+    <text x="680" y="333" text-anchor="middle" font-size="12" fill="#555">no untouched copy for the router to fall back on</text>
+  </g>
+
+  <!-- connecting lines from router to both groups -->
+  <line x1="437" y1="92" x2="220" y2="186" stroke="#bbb" stroke-width="1.2"/>
+  <line x1="463" y1="92" x2="680" y2="186" stroke="#bbb" stroke-width="1.2"/>
+</svg>
