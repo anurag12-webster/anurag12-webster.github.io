@@ -88,7 +88,7 @@ async function onEnter() {
   top: 50%;
   left: calc(100% + 14px);
   transform: translateY(-50%);
-  width: 240px;
+  width: max-content;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -249,7 +249,8 @@ async function onEnter() {
 }
 
 .gh-skel-graph {
-  height: 52px;
+  width: 178px;
+  height: 50px;
   border-radius: 4px;
   background: var(--border);
   animation: pulse 1.2s ease-in-out infinite;
