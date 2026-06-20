@@ -9,7 +9,6 @@
             <div class="gh-info">
               <div class="gh-name">{{ profile.name || profile.login }}</div>
               <div class="gh-login">@{{ profile.login }}</div>
-              <div v-if="profile.bio" class="gh-bio">{{ profile.bio }}</div>
             </div>
           </div>
 
@@ -36,10 +35,11 @@
           <div class="gh-skeleton">
             <div class="gh-skel-avatar" />
             <div class="gh-skel-lines">
-              <div class="gh-skel-line" style="width: 70%" />
-              <div class="gh-skel-line" style="width: 45%" />
+              <div class="gh-skel-line" style="width: 65%" />
+              <div class="gh-skel-line" style="width: 40%" />
             </div>
           </div>
+          <div class="gh-skel-graph" />
         </template>
       </div>
     </Transition>
@@ -70,13 +70,9 @@ async function onEnter() {
   if (contribData?.contributions) {
     const all = contribData.contributions
     totalContributions.value = all.reduce((s, d) => s + d.count, 0)
-
-    // group into weeks (chunks of 7), take last 26 weeks
     const grouped = []
-    for (let i = 0; i < all.length; i += 7) {
-      grouped.push(all.slice(i, i + 7))
-    }
-    weeks.value = grouped.slice(-26)
+    for (let i = 0; i < all.length; i += 7) grouped.push(all.slice(i, i + 7))
+    weeks.value = grouped.slice(-20)
   }
 }
 </script>
@@ -89,55 +85,72 @@ async function onEnter() {
 
 .gh-card {
   position: absolute;
-  bottom: calc(100% + 10px);
-  left: 0;
-  width: 280px;
+  top: 50%;
+  left: calc(100% + 14px);
+  transform: translateY(-50%);
+  width: 240px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px;
+  border-radius: 10px;
+  padding: 12px;
   z-index: 100;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
   pointer-events: none;
 }
 
 .dark .gh-card {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
 }
 
-/* Transition */
-.ghcard-enter-active,
-.ghcard-leave-active {
-  transition: opacity 0.18s ease, transform 0.18s ease;
+/* Arrow pointing left */
+.gh-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
-.ghcard-enter-from,
+
+/* Transition — slides in from left */
+.ghcard-enter-active {
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ghcard-leave-active {
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+.ghcard-enter-from {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-6px) scale(0.97);
+}
 .ghcard-leave-to {
   opacity: 0;
-  transform: translateY(6px) scale(0.97);
+  transform: translateY(-50%) translateX(-4px) scale(0.98);
 }
 
 /* Top row */
 .gh-top {
   display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  margin-bottom: 10px;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 9px;
 }
 
 .gh-avatar {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1px solid var(--border);
   flex-shrink: 0;
 }
 
-.gh-info {
-  min-width: 0;
-}
-
 .gh-name {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--fg);
   letter-spacing: -0.01em;
@@ -146,35 +159,24 @@ async function onEnter() {
 
 .gh-login {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--fg-subtle);
   margin-top: 1px;
 }
 
-.gh-bio {
-  font-size: 0.72rem;
-  color: var(--fg-muted);
-  margin-top: 4px;
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Meta stats */
+/* Stats */
 .gh-meta {
   display: flex;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 10px;
+  padding: 6px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 6px 0;
+  margin-bottom: 9px;
 }
 
 .gh-meta span {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--fg-subtle);
 }
 
@@ -191,20 +193,18 @@ async function onEnter() {
 }
 
 .gh-day {
-  width: 7px;
-  height: 7px;
-  border-radius: 1.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
   background: var(--border);
 }
 
-/* Light mode levels */
 .gh-day[data-level="1"] { background: #9be9a8; }
 .gh-day[data-level="2"] { background: #40c463; }
 .gh-day[data-level="3"] { background: #30a14e; }
 .gh-day[data-level="4"] { background: #216e39; }
 
-/* Dark mode levels */
-.dark .gh-day[data-level="0"] { background: #161b22; }
+.dark .gh-day[data-level="0"] { background: #1a1f27; }
 .dark .gh-day[data-level="1"] { background: #0e4429; }
 .dark .gh-day[data-level="2"] { background: #006d32; }
 .dark .gh-day[data-level="3"] { background: #26a641; }
@@ -212,21 +212,22 @@ async function onEnter() {
 
 .gh-graph-label {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   color: var(--fg-subtle);
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 /* Skeleton */
 .gh-skeleton {
   display: flex;
-  gap: 10px;
-  align-items: flex-start;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 9px;
 }
 
 .gh-skel-avatar {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--border);
   flex-shrink: 0;
@@ -237,19 +238,25 @@ async function onEnter() {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-top: 4px;
+  gap: 5px;
 }
 
 .gh-skel-line {
-  height: 10px;
+  height: 8px;
   border-radius: 3px;
+  background: var(--border);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.gh-skel-graph {
+  height: 52px;
+  border-radius: 4px;
   background: var(--border);
   animation: pulse 1.2s ease-in-out infinite;
 }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50% { opacity: 0.35; }
 }
 </style>
