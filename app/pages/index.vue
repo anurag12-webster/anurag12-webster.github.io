@@ -13,7 +13,11 @@
       </p>
 
       <ul class="social-list">
-        <li><a href="https://github.com/anurag12-webster" target="_blank" rel="noopener">GitHub</a></li>
+        <li>
+          <GitHubCard>
+            <a href="https://github.com/anurag12-webster" target="_blank" rel="noopener">GitHub</a>
+          </GitHubCard>
+        </li>
         <li><a href="https://huggingface.co/edwixx" target="_blank" rel="noopener">HuggingFace</a></li>
         <li><a href="https://x.com/edwixxxx" target="_blank" rel="noopener">Twitter / X</a></li>
         <li><a href="https://www.linkedin.com/in/anurag-kanade/" target="_blank" rel="noopener">LinkedIn</a></li>
