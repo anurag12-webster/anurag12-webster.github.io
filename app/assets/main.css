@@ -415,7 +415,7 @@ footer {
   font-size: 0.9375rem;
   line-height: 1.8;
   color: var(--fg-muted);
-  padding-bottom: 5rem;
+  padding-bottom: 0;
 }
 
 .prose h1,
@@ -660,6 +660,99 @@ footer {
 .card-link:hover {
   color: var(--fg);
   border-color: var(--fg);
+}
+
+/* Shared section label */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+/* Citations / References */
+.citations {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.citations .section-label {
+  margin-bottom: 1.25rem;
+}
+
+.citations-list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.citations-list li {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.citations-list a {
+  color: var(--fg-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.citations-list a:hover {
+  color: var(--fg);
+}
+
+/* Cite this post */
+.cite-this {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.cite-this-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.875rem;
+}
+
+.cite-block {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1rem 1.25rem;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cite-copy {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--fg-subtle);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.cite-copy:hover,
+.cite-copy.copied {
+  color: var(--fg);
+  border-color: var(--border-hover);
 }
 
 /* Responsive */

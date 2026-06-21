@@ -13,6 +13,10 @@ export default defineContentConfig({
         categories: z.array(z.string()).optional(),
         thumbnail: z.string().optional(),
         hidden: z.boolean().optional(),
+        citations: z.array(z.object({
+          text: z.string(),
+          url: z.string().optional(),
+        })).optional(),
       }),
     }),
   },
