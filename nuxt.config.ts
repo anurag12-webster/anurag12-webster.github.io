@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-og-image'],
+  modules: ['@nuxt/content', 'nuxt-og-image', '@vercel/analytics/nuxt'],
   devtools: { enabled: false },
   compatibilityDate: '2024-04-03',
 
