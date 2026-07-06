@@ -4,15 +4,11 @@
       <h1 class="home-name">Anurag Kanade</h1>
 
       <p class="home-bio">
-        Currently building real-time voice AI — low-latency ASR/TTS pipelines and LLM inference serving speech agents to 100k+ daily requests.
+        I work in audio ML — ASR, TTS, and speech-to-speech systems. Lately I'm most interested in speech-to-speech models and evals, with a bit of GPU programming on the side.
       </p>
 
       <p class="home-bio">
-        I also publish open-source <NuxtLink to="/models">models</NuxtLink> and <NuxtLink to="/datasets">datasets</NuxtLink> for speech and language research.
-      </p>
-
-      <p class="home-bio">
-        Started out as a Python developer intern at CKMVigil Technologies, building medical-imaging pipelines.
+        I also publish open-source audio <NuxtLink to="/models">models</NuxtLink> and <NuxtLink to="/datasets">datasets</NuxtLink>.
       </p>
 
       <p class="home-contact">
