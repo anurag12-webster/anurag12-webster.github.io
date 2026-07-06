@@ -1,10 +1,12 @@
 <template>
   <div class="blog-container">
-    <ul class="post-list">
+    <h1 class="blog-title">Writing</h1>
+    <ul class="post-list writing-list">
       <li v-for="post in posts" :key="post.path" class="post-item">
         <NuxtLink :to="post.path">
-          <span class="post-meta">{{ formatDate(post.date) }}</span>
           <span class="post-title">{{ post.title }}</span>
+          <span class="post-dots"></span>
+          <span class="post-meta">{{ formatDate(post.date) }}</span>
         </NuxtLink>
       </li>
     </ul>
@@ -18,7 +20,10 @@ const { data: posts } = await useAsyncData('all-posts', () =>
 
 function formatDate(dateStr) {
   if (!dateStr) return ''
-  return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  const d = new Date(dateStr)
+  const month = d.toLocaleDateString('en-US', { month: 'short' })
+  const year = String(d.getFullYear()).slice(-2)
+  return `${month} '${year}`
 }
 
 useSeoMeta({

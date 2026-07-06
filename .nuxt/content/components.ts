@@ -6,8 +6,10 @@ const pickExport = (mod, exportName, componentName, path) => {
   return resolved
 }
 export const localComponentLoaders = {
+  ProseImg: () => import("./../../app/components/content/ProseImg.vue").then(m => pickExport(m, "default", "ProseImg", "./../../app/components/content/ProseImg.vue")),
   Alert: () => import("./../../app/components/Alert.vue").then(m => pickExport(m, "default", "Alert", "./../../app/components/Alert.vue")),
   Counter: () => import("./../../app/components/Counter.vue").then(m => pickExport(m, "default", "Counter", "./../../app/components/Counter.vue")),
+  GitHubCard: () => import("./../../app/components/GitHubCard.vue").then(m => pickExport(m, "default", "GitHubCard", "./../../app/components/GitHubCard.vue")),
   NuxtWelcome: () => import("./../../node_modules/nuxt/dist/app/components/welcome.vue").then(m => pickExport(m, "default", "NuxtWelcome", "./../../node_modules/nuxt/dist/app/components/welcome.vue")),
   NuxtLayout: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-layout").then(m => pickExport(m, "default", "NuxtLayout", "./../../node_modules/nuxt/dist/app/components/nuxt-layout")),
   NuxtErrorBoundary: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").then(m => pickExport(m, "default", "NuxtErrorBoundary", "./../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")),
@@ -38,5 +40,5 @@ export const localComponentLoaders = {
   MDCSlot: () => import("./../../node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot.vue").then(m => pickExport(m, "default", "MDCSlot", "./../../node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot.vue")),
   NuxtIsland: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-island").then(m => pickExport(m, "default", "NuxtIsland", "./../../node_modules/nuxt/dist/app/components/nuxt-island")),
 }
-export const globalComponents: string[] = ["ProseA","ProseBlockquote","ProseCode","ProseEm","ProseH1","ProseH2","ProseH3","ProseH4","ProseH5","ProseH6","ProseHr","ProseImg","ProseLi","ProseOl","ProseP","ProsePre","ProseScript","ProseStrong","ProseTable","ProseTbody","ProseTd","ProseTh","ProseThead","ProseTr","ProseUl"]
-export const localComponents: string[] = ["Alert","Counter","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtIsland"]
+export const globalComponents: string[] = ["ProseA","ProseBlockquote","ProseCode","ProseEm","ProseH1","ProseH2","ProseH3","ProseH4","ProseH5","ProseH6","ProseHr","ProseLi","ProseOl","ProseP","ProsePre","ProseScript","ProseStrong","ProseTable","ProseTbody","ProseTd","ProseTh","ProseThead","ProseTr","ProseUl"]
+export const localComponents: string[] = ["ProseImg","Alert","Counter","GitHubCard","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtIsland"]

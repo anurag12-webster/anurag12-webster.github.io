@@ -1,8 +1,8 @@
 export const checksums = {
-  "blog": "v3.5.0--bPmpx7WOMgCWvp93ekxxSMl8JGr-kPUsjUCGIPcWiko"
+  "blog": "v3.5.0--d6Ln-VxuhgiOqdSnWOcxUfmI-PmP3cKZHAw6WkFFDnE"
 }
 export const checksumsStructure = {
-  "blog": "GYxHGSqzDdxU2rd3mrAmRtEpzXGa6mU4JOZkUgkrPG4"
+  "blog": "WJCX28_xSh5_96sJUGlvg37AnteX_-XVuOm7SCvT5WI"
 }
 
 export const tables = {
@@ -19,6 +19,7 @@ export default {
       "author": "string",
       "body": "json",
       "categories": "json",
+      "citations": "json",
       "date": "string",
       "description": "string",
       "extension": "string",

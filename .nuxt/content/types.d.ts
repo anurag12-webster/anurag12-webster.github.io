@@ -16,6 +16,10 @@ declare module '@nuxt/content' {
     categories?: string[];
     thumbnail?: string;
     hidden?: boolean;
+    citations?: {
+    text: string;
+    url?: string;
+    }[];
   }
   
 

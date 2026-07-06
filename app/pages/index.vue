@@ -2,14 +2,21 @@
   <div class="home">
     <div class="container">
       <h1 class="home-name">Anurag Kanade</h1>
-      <p class="home-role">Audio AI — ASR, TTS, speech-to-speech.</p>
 
       <p class="home-bio">
-        I work on making machines listen and speak. Lately deep in speech-to-speech models and the weird edge cases that break them. I write here when something clicks.
+        Currently building real-time voice AI — low-latency ASR/TTS pipelines and LLM inference serving speech agents to 100k+ daily requests.
+      </p>
+
+      <p class="home-bio">
+        I also publish open-source <NuxtLink to="/models">models</NuxtLink> and <NuxtLink to="/datasets">datasets</NuxtLink> for speech and language research.
+      </p>
+
+      <p class="home-bio">
+        Started out as a Python developer intern at CKMVigil Technologies, building medical-imaging pipelines.
       </p>
 
       <p class="home-contact">
-        Building something in audio? <a href="mailto:anuragkanade54@gmail.com">Say hi.</a>
+        Building something in speech or ML? <a href="mailto:anuragkanade54@gmail.com">Say hi.</a>
       </p>
 
       <ul class="social-list">

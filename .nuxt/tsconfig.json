@@ -222,6 +222,7 @@
     "../node_modules/@nuxt/content/node_modules",
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/nuxt-og-image/node_modules",
+    "../node_modules/@vercel/analytics/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/mdc/node_modules",
     "../dist",

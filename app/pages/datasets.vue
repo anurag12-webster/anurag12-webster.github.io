@@ -1,6 +1,7 @@
 <template>
   <div class="blog-container">
-    <ul class="post-list">
+    <h1 class="blog-title">Datasets</h1>
+    <ul class="post-list writing-list">
       <li v-for="dataset in datasets" :key="dataset.title" class="post-item dataset-item">
         <a :href="dataset.link" target="_blank" rel="noopener noreferrer">
           <span class="post-title">{{ dataset.title }}</span>
@@ -32,6 +33,11 @@ const datasets = [
     title: 'Obama Voice Sample Dataset',
     desc: '25+ minutes of clean 24kHz speech from public addresses, optimized for RVC training.',
     link: 'https://huggingface.co/datasets/ModelsLab/Obama-Sample-Dataset',
+  },
+  {
+    title: 'Speech Dataset International',
+    desc: 'Multilingual speech dataset for TTS and speech synthesis research.',
+    link: 'https://huggingface.co/datasets/edwixx/Speech-Dataset-International',
   },
 ]
 

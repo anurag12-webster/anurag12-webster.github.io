@@ -20,6 +20,7 @@
     "satori": "^0.26.0"
   },
   "devDependencies": {
-    "nuxt-og-image": "^6.3.2"
+    "nuxt-og-image": "^6.3.2",
+    "typescript": "^6.0.3"
   }
 }
