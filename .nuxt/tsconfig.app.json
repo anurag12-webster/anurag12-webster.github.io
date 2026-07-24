@@ -62,10 +62,10 @@
         "../node_modules/crossws"
       ],
       "#content/components": [
-        "./content/components"
+        "./content/components.ts"
       ],
       "#content/manifest": [
-        "./content/manifest"
+        "./content/manifest.ts"
       ],
       "~": [
         "../app"
@@ -137,16 +137,16 @@
         "./imports"
       ],
       "#mdc-configs": [
-        "./mdc-configs"
+        "./mdc-configs.mjs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter"
+        "./mdc-highlighter.mjs"
       ],
       "#mdc-imports": [
-        "./mdc-imports"
+        "./mdc-imports.mjs"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/dev.json"
       ],
       "#components": [
         "./components"
@@ -209,6 +209,7 @@
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/nuxt-og-image/node_modules",
     "../node_modules/@vercel/analytics/node_modules",
+    "../node_modules/@nuxtjs/color-mode/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/mdc/node_modules",
     "../dist",

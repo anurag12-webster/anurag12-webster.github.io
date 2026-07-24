@@ -41,6 +41,7 @@ export { defineOgImage } from '../node_modules/nuxt-og-image/dist/runtime/app/co
 export { defineOgImageComponent } from '../node_modules/nuxt-og-image/dist/runtime/app/composables/defineOgImageComponent';
 export { defineOgImageScreenshot } from '../node_modules/nuxt-og-image/dist/runtime/app/composables/defineOgImageScreenshot';
 export { getOgImagePath } from '../node_modules/nuxt-og-image/dist/runtime/app/utils';
+export { useColorMode } from '../node_modules/@nuxtjs/color-mode/dist/runtime/composables';
 export { flatUnwrap as unwrapSlot } from '../node_modules/@nuxtjs/mdc/dist/runtime/utils/node';
 export { parseMarkdown } from '../node_modules/@nuxtjs/mdc/dist/runtime/parser';
 export { stringifyMarkdown } from '../node_modules/@nuxtjs/mdc/dist/runtime/stringify';

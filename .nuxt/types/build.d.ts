@@ -14,6 +14,7 @@ declare module "#build/plugins.server.mjs";
 declare module "#build/test-component-wrapper.mjs";
 declare module "#build/nuxt-og-image/components.mjs";
 declare module "#build/vercel-analytics.client.ts";
+declare module "#build/color-mode-options.mjs";
 declare module "#build/routes.mjs";
 declare module "#build/pages.mjs";
 declare module "#build/router.options.mjs";

@@ -7,6 +7,7 @@ const pickExport = (mod, exportName, componentName, path) => {
 }
 export const localComponentLoaders = {
   ProseImg: () => import("./../../app/components/content/ProseImg.vue").then(m => pickExport(m, "default", "ProseImg", "./../../app/components/content/ProseImg.vue")),
+  ProsePre: () => import("./../../app/components/content/ProsePre.vue").then(m => pickExport(m, "default", "ProsePre", "./../../app/components/content/ProsePre.vue")),
   Alert: () => import("./../../app/components/Alert.vue").then(m => pickExport(m, "default", "Alert", "./../../app/components/Alert.vue")),
   Counter: () => import("./../../app/components/Counter.vue").then(m => pickExport(m, "default", "Counter", "./../../app/components/Counter.vue")),
   GitHubCard: () => import("./../../app/components/GitHubCard.vue").then(m => pickExport(m, "default", "GitHubCard", "./../../app/components/GitHubCard.vue")),
@@ -24,6 +25,7 @@ export const localComponentLoaders = {
   NuxtImg: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-stubs").then(m => pickExport(m, "NuxtImg", "NuxtImg", "./../../node_modules/nuxt/dist/app/components/nuxt-stubs")),
   NuxtPicture: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-stubs").then(m => pickExport(m, "NuxtPicture", "NuxtPicture", "./../../node_modules/nuxt/dist/app/components/nuxt-stubs")),
   ContentRenderer: () => import("./../../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue").then(m => pickExport(m, "default", "ContentRenderer", "./../../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue")),
+  ColorScheme: () => import("./../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue").then(m => pickExport(m, "default", "ColorScheme", "./../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue")),
   NuxtPage: () => import("./../../node_modules/nuxt/dist/pages/runtime/page").then(m => pickExport(m, "default", "NuxtPage", "./../../node_modules/nuxt/dist/pages/runtime/page")),
   NoScript: () => import("./../../node_modules/nuxt/dist/head/runtime/components").then(m => pickExport(m, "NoScript", "NoScript", "./../../node_modules/nuxt/dist/head/runtime/components")),
   Link: () => import("./../../node_modules/nuxt/dist/head/runtime/components").then(m => pickExport(m, "Link", "Link", "./../../node_modules/nuxt/dist/head/runtime/components")),
@@ -40,5 +42,5 @@ export const localComponentLoaders = {
   MDCSlot: () => import("./../../node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot.vue").then(m => pickExport(m, "default", "MDCSlot", "./../../node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot.vue")),
   NuxtIsland: () => import("./../../node_modules/nuxt/dist/app/components/nuxt-island").then(m => pickExport(m, "default", "NuxtIsland", "./../../node_modules/nuxt/dist/app/components/nuxt-island")),
 }
-export const globalComponents: string[] = ["ProseA","ProseBlockquote","ProseCode","ProseEm","ProseH1","ProseH2","ProseH3","ProseH4","ProseH5","ProseH6","ProseHr","ProseLi","ProseOl","ProseP","ProsePre","ProseScript","ProseStrong","ProseTable","ProseTbody","ProseTd","ProseTh","ProseThead","ProseTr","ProseUl"]
-export const localComponents: string[] = ["ProseImg","Alert","Counter","GitHubCard","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtIsland"]
+export const globalComponents: string[] = ["ProseA","ProseBlockquote","ProseCode","ProseEm","ProseH1","ProseH2","ProseH3","ProseH4","ProseH5","ProseH6","ProseHr","ProseLi","ProseOl","ProseP","ProseScript","ProseStrong","ProseTable","ProseTbody","ProseTd","ProseTh","ProseThead","ProseTr","ProseUl"]
+export const localComponents: string[] = ["ProseImg","ProsePre","Alert","Counter","GitHubCard","NuxtWelcome","NuxtLayout","NuxtErrorBoundary","ClientOnly","DevOnly","ServerPlaceholder","NuxtLink","NuxtLoadingIndicator","NuxtTime","NuxtRouteAnnouncer","NuxtAnnouncer","NuxtImg","NuxtPicture","ContentRenderer","ColorScheme","NuxtPage","NoScript","Link","Base","Title","Meta","Style","Head","Html","Body","MDC","MDCCached","MDCRenderer","MDCSlot","NuxtIsland"]

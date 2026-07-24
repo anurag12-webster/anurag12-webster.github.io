@@ -1,7 +1,7 @@
 import _RemarkEmoji from 'remark-emoji'
 import _RemarkMath from 'remark-math'
 import _RehypeKatex from 'rehype-katex'
-import _Highlight from '/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.js'
+import _Highlight from '/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.js'
 
 export const remarkPlugins = {
   'remark-emoji': { instance: _RemarkEmoji },

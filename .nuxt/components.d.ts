@@ -15,6 +15,7 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 
 export const ProseImg: typeof import("../app/components/content/ProseImg.vue")['default']
+export const ProsePre: typeof import("../app/components/content/ProsePre.vue")['default']
 export const Alert: typeof import("../app/components/Alert.vue")['default']
 export const Counter: typeof import("../app/components/Counter.vue")['default']
 export const GitHubCard: typeof import("../app/components/GitHubCard.vue")['default']
@@ -32,7 +33,6 @@ export const ProseHr: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/co
 export const ProseLi: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue")['default']
 export const ProseOl: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue")['default']
 export const ProseP: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue")['default']
-export const ProsePre: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProsePre.vue")['default']
 export const ProseScript: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue")['default']
 export const ProseStrong: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue")['default']
 export const ProseTable: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue")['default']
@@ -56,6 +56,7 @@ export const NuxtAnnouncer: typeof import("../node_modules/nuxt/dist/app/compone
 export const NuxtImg: typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']
 export const NuxtPicture: typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']
 export const ContentRenderer: typeof import("../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue")['default']
+export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue")['default']
 export const NuxtPage: typeof import("../node_modules/nuxt/dist/pages/runtime/page")['default']
 export const NoScript: typeof import("../node_modules/nuxt/dist/head/runtime/components")['NoScript']
 export const Link: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -72,6 +73,7 @@ export const MDCRenderer: typeof import("../node_modules/@nuxtjs/mdc/dist/runtim
 export const MDCSlot: typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/MDCSlot.vue")['default']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyProseImg: LazyComponent<typeof import("../app/components/content/ProseImg.vue")['default']>
+export const LazyProsePre: LazyComponent<typeof import("../app/components/content/ProsePre.vue")['default']>
 export const LazyAlert: LazyComponent<typeof import("../app/components/Alert.vue")['default']>
 export const LazyCounter: LazyComponent<typeof import("../app/components/Counter.vue")['default']>
 export const LazyGitHubCard: LazyComponent<typeof import("../app/components/GitHubCard.vue")['default']>
@@ -89,7 +91,6 @@ export const LazyProseHr: LazyComponent<typeof import("../node_modules/@nuxtjs/m
 export const LazyProseLi: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseLi.vue")['default']>
 export const LazyProseOl: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseOl.vue")['default']>
 export const LazyProseP: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseP.vue")['default']>
-export const LazyProsePre: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProsePre.vue")['default']>
 export const LazyProseScript: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseScript.vue")['default']>
 export const LazyProseStrong: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseStrong.vue")['default']>
 export const LazyProseTable: LazyComponent<typeof import("../node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseTable.vue")['default']>
@@ -113,6 +114,7 @@ export const LazyNuxtAnnouncer: LazyComponent<typeof import("../node_modules/nux
 export const LazyNuxtImg: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']>
 export const LazyNuxtPicture: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']>
 export const LazyContentRenderer: LazyComponent<typeof import("../node_modules/@nuxt/content/dist/runtime/components/ContentRenderer.vue")['default']>
+export const LazyColorScheme: LazyComponent<typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue")['default']>
 export const LazyNuxtPage: LazyComponent<typeof import("../node_modules/nuxt/dist/pages/runtime/page")['default']>
 export const LazyNoScript: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
 export const LazyLink: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['Link']>

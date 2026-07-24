@@ -1,7 +1,13 @@
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-og-image', '@vercel/analytics/nuxt'],
+  modules: ['@nuxt/content', 'nuxt-og-image', '@vercel/analytics/nuxt', '@nuxtjs/color-mode'],
   devtools: { enabled: false },
   compatibilityDate: '2024-04-03',
+
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light',
+  },
 
   site: {
     url: 'https://anuragkanade.com',
@@ -55,6 +61,7 @@ export default defineNuxtConfig({
       routes: [
         '/blog/gpu-architecture-notes',
         '/blog/neural-audio-codec-rvq',
+        '/blog/shrinking-full-duplex-speech',
         '/blog/teaching-models-to-write-kernels',
         '/blog/tpu-silicon-engine-ai-training',
         '/blog/tts-datasets',

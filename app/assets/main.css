@@ -4,17 +4,32 @@
   padding: 0;
 }
 
-:root {
+:root, .light {
   --font-sans: 'Suisse Int\'l', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
   --bg: #ffffff;
+  --bg-subtle: #f4f4f4;
   --fg: #0a0a0a;
   --fg-muted: #525252;
   --fg-subtle: #a3a3a3;
   --border: #e8e8e8;
   --border-hover: #c8c8c8;
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
   --max-w: 1400px;
   --prose-w: 680px;
+}
+
+.dark {
+  --bg: #0b0b0b;
+  --bg-subtle: #171717;
+  --fg: #f0f0ee;
+  --fg-muted: #ababab;
+  --fg-subtle: #6f6f6f;
+  --border: #262626;
+  --border-hover: #3d3d3d;
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
 }
 
 html {
@@ -26,6 +41,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'cv11', 'ss01';
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 body {
@@ -89,14 +105,14 @@ nav {
   font-weight: 400;
   font-size: clamp(1rem, 2.2vw, 25px);
   line-height: normal;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   display: inline-block;
   transition: none;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   transform: scale(1.08);
 }
 
@@ -150,13 +166,13 @@ footer {
   font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
 }
 
 .home-bio {
   font-size: 1.0625rem;
   font-weight: 500;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   max-width: 800px;
   line-height: 1.7;
   margin-bottom: 1.25rem;
@@ -164,12 +180,12 @@ footer {
 
 .home-contact {
   font-size: 0.9375rem;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   margin-bottom: 0;
 }
 
 .home-contact a {
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--border-hover);
@@ -196,7 +212,7 @@ footer {
 
 .social-list a {
   font-size: 0.875rem;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   transition: color 0.12s;
   display: inline-block;
   padding: 0.2rem 0;
@@ -239,7 +255,7 @@ footer {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: rgb(0, 0, 0);
+  color: var(--fg);
   margin-bottom: 2rem;
 }
 
@@ -290,6 +306,7 @@ footer {
 
 .writing-list .post-item a:hover .post-title {
   background: #fef08a;
+  color: #1a1a1a;
 }
 
 .dataset-item {
@@ -430,15 +447,16 @@ footer {
 .prose p { margin-bottom: 1.35rem; }
 
 .prose a {
-  color: var(--fg);
+  color: var(--link);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: var(--border-hover);
-  transition: text-decoration-color 0.12s;
+  text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
+  transition: color 0.12s, text-decoration-color 0.12s;
 }
 
 .prose a:hover {
-  text-decoration-color: var(--fg);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .prose strong {
@@ -473,7 +491,7 @@ footer {
 }
 
 .prose pre {
-  background: #f4f4f4;
+  background: var(--bg-subtle);
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 1.25rem 1.5rem;

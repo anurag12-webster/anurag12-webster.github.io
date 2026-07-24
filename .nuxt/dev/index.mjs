@@ -1,49 +1,49 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, createError, getQuery as getQuery$1, removeResponseHeader, readBody, setHeader, getRouterParam, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatusText, H3Error } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, createError, getQuery as getQuery$1, removeResponseHeader, readBody, setHeader, getRouterParam, getResponseStatus, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatusText, H3Error } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve as resolve$3, dirname, join as join$1 } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId, Worker } from 'node:worker_threads';
-import { escapeHtml } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/@vue/shared/dist/shared.cjs.js';
-import defu, { defuFn, defu as defu$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/defu/dist/defu.mjs';
-import { parse, ELEMENT_NODE, TEXT_NODE } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/ultrahtml/dist/index.js';
-import { querySelector } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/ultrahtml/dist/selector.js';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, withoutLeadingSlash, decodePath, joinRelativeURL } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/ufo/dist/index.mjs';
+import { escapeHtml } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/@vue/shared/dist/shared.cjs.js';
+import defu, { defuFn, defu as defu$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/defu/dist/defu.mjs';
+import { parse, ELEMENT_NODE, TEXT_NODE } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/ultrahtml/dist/index.js';
+import { querySelector } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/ultrahtml/dist/selector.js';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withLeadingSlash, withoutTrailingSlash, withBase, withTrailingSlash, withoutLeadingSlash, decodePath, joinRelativeURL } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/ufo/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
-import { join, dirname as dirname$1, resolve as resolve$4, isAbsolute } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/pathe/dist/index.mjs';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import destr, { destr as destr$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/destr/dist/index.mjs';
-import { stringify, uneval, parse as parse$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/devalue/index.js';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unhead/dist/server.mjs';
+import { join, dirname as dirname$1, resolve as resolve$4, isAbsolute } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/pathe/dist/index.mjs';
+import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import destr, { destr as destr$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/destr/dist/index.mjs';
+import { stringify, uneval, parse as parse$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/devalue/index.js';
+import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unhead/dist/server.mjs';
 import { existsSync, mkdirSync, readFileSync, writeFileSync, promises } from 'node:fs';
-import { createHooks } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1, $fetch as $fetch$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage, normalizeKey } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unstorage/drivers/fs.mjs';
-import { digest, hash as hash$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/klona/dist/index.mjs';
-import { snakeCase } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/radix3/dist/index.mjs';
-import consola, { createConsola, consola as consola$1 } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/youch-core/build/index.js';
-import { Youch } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/source-map/source-map.js';
-import devalue from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { toValue, isVNode, isRef } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/vue/index.mjs';
+import { createHooks } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1, $fetch as $fetch$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, prefixStorage, normalizeKey } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unstorage/drivers/fs.mjs';
+import { digest, hash as hash$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/klona/dist/index.mjs';
+import { snakeCase } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/radix3/dist/index.mjs';
+import consola, { createConsola, consola as consola$1 } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/consola/dist/index.mjs';
+import { ErrorParser } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/youch-core/build/index.js';
+import { Youch } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/youch/build/index.js';
+import { SourceMapConsumer } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/source-map/source-map.js';
+import devalue from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { toValue, isVNode, isRef } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/vue/index.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/errx/dist/index.js';
-import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/errx/dist/index.js';
+import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
 import { fileURLToPath } from 'node:url';
-import { renderToString } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/vue/server-renderer/index.mjs';
-import { walkResolver } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unhead/dist/utils.mjs';
-import localAdapter from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/db0/dist/connectors/better-sqlite3.mjs';
-import lruCacheDriver from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unstorage/drivers/lru-cache.mjs';
-import { createUnhead } from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/unhead/dist/index.mjs';
-import _satori from 'file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/satori/dist/index.js';
+import { renderToString } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/vue/server-renderer/index.mjs';
+import { walkResolver } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unhead/dist/utils.mjs';
+import localAdapter from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/db0/dist/connectors/better-sqlite3.mjs';
+import lruCacheDriver from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unstorage/drivers/lru-cache.mjs';
+import { createUnhead } from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/unhead/dist/index.mjs';
+import _satori from 'file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/satori/dist/index.js';
 
-const serverAssets = [{"baseName":"server","dir":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -55,11 +55,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/server","watchOptions":{"ignored":[null]}}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.data/kv"}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io","watchOptions":{"ignored":[null]}}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/server","watchOptions":{"ignored":[null]}}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt"}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt/cache"}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.data/kv"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -655,6 +655,9 @@ const _inlineRuntimeConfig = {
       "/blog/neural-audio-codec-rvq": {
         "prerender": true
       },
+      "/blog/shrinking-full-duplex-speech": {
+        "prerender": true
+      },
       "/blog/teaching-models-to-write-kernels": {
         "prerender": true
       },
@@ -686,6 +689,9 @@ const _inlineRuntimeConfig = {
         "prerender": true
       },
       "/blog/neural-audio-codec-rvq/_payload.json": {
+        "prerender": true
+      },
+      "/blog/shrinking-full-duplex-speech/_payload.json": {
         "prerender": true
       },
       "/blog/teaching-models-to-write-kernels/_payload.json": {
@@ -753,7 +759,7 @@ const _inlineRuntimeConfig = {
     },
     "localDatabase": {
       "type": "sqlite",
-      "filename": "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.data/content/contents.sqlite"
+      "filename": "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.data/content/contents.sqlite"
     },
     "integrityCheck": true
   },
@@ -812,9 +818,9 @@ const _inlineRuntimeConfig = {
       "og-image",
       "OgImageTemplate"
     ],
-    "srcDir": "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/app",
-    "rootDir": "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io",
-    "communityTemplatesDir": "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community"
+    "srcDir": "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/app",
+    "rootDir": "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io",
+    "communityTemplatesDir": "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community"
   }
 };
 const envOptions = {
@@ -2282,7 +2288,7 @@ function getSiteConfig(e, _options) {
   return e.context.siteConfig.get(options);
 }
 
-const _Idu3Fy3jg5U774QH15OrbqfIZKkMiqDzT8qKG7yf0tg = defineNitroPlugin(async (nitroApp) => {
+const _QlyUEWHhYEMRgRB1NxtjOQTuG9lyH4pC8Yo9Doosk = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
     const routeOptions = getRouteRules(event);
     const isIsland = process.env.NUXT_COMPONENT_ISLANDS && event.path.startsWith("/__nuxt_island");
@@ -2903,7 +2909,7 @@ function createNitroRouteRuleMatcher() {
   };
 }
 
-const componentNames = [{"hash":"XG2DTMzZI6zUm3FvksBxMeOmedPPQ8FG69drTpUSe-4","pascalName":"OgImageBlogPostSatori","kebabName":"og-image-blog-post-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/app/components/OgImage/BlogPost.satori.vue","category":"app","renderer":"satori","propNames":["title","category"]},{"hash":"Nii9MheFKbeOSkOj9qtSGSHTVGzl03zt8xU3S9I-GA4","pascalName":"BlogPostTakumi","kebabName":"blog-post-takumi","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/BlogPost.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","author","date","category","avatar","backgroundImage"]},{"hash":"Kf8rphxjBGtGJd9yb27plwTGRU5JtSzvg8wWkhMIkBI","pascalName":"BrutalistSatori","kebabName":"brutalist-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Brutalist.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","subtitle","accent"]},{"hash":"rL7FpBisCop2TG42iQRJGFZZItC3-XzdqfmptP9UCnk","pascalName":"DocsTakumi","kebabName":"docs-takumi","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Docs.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","description","icon","primaryColor","primaryTextColor","site"]},{"hash":"I2PtG1xFMpZxsUmEZfqSesH2AcS0S1KfSK-IQzaK7FQ","pascalName":"FrameSatori","kebabName":"frame-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Frame.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","description","bg","icon","logo","image","username","socials"]},{"hash":"mh6YW5EOmoJ0J6i6aA11GC0IxPdgToPp30qK2LIsqf4","pascalName":"NuxtSatori","kebabName":"nuxt-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Nuxt.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","headline"]},{"hash":"FrixLZMM-QKuCVMeLU72WdQbE-CHwAwf4DqV8S2uAd0","pascalName":"NuxtSeoSatori","kebabName":"nuxt-seo-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","description","isPro"]},{"hash":"cFYTVsKa3J48KJwXTJEqV9qZKEA0zgz-W-8jrdXKjZw","pascalName":"NuxtSeoTakumi","kebabName":"nuxt-seo-takumi","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","description","isPro","width","height"]},{"hash":"5Xy09wVQErT2e9MpEtdHkz5OxL6tRgqo-9MFvemClFE","pascalName":"PergelSatori","kebabName":"pergel-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Pergel.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","description","headline"]},{"hash":"qzOKZNUZ-1A2I3uL-N-od-jRWyexKx7JSJZlmOg9NHc","pascalName":"ProductCardTakumi","kebabName":"product-card-takumi","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/ProductCard.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","productName","price","description","image","brand"]},{"hash":"5IACzL4LjOUdw1WLpjABTnAfWRkWV8uXT7y8tBxUwC0","pascalName":"SaaSSatori","kebabName":"saa-s-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SaaS.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","icon","theme","image"]},{"hash":"b9CqMyNj9aYI3JDauWG-T6y4xe5-M-tBSu-LOj94Z4M","pascalName":"SimpleBlogSatori","kebabName":"simple-blog-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SimpleBlog.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title"]},{"hash":"RJ3pWw5n7QlfM6kEXmvD-jmscNOvC74V-EnvrlvImyw","pascalName":"UnJsSatori","kebabName":"un-js-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/UnJs.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","emoji","contributors"]},{"hash":"wSTKUff2Xeyt-k2gaHRy9YGXwDqwRpdugm7Z8qF9zBo","pascalName":"WithEmojiSatori","kebabName":"with-emoji-satori","path":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/WithEmoji.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","emoji","title"]}];
+const componentNames = [{"hash":"XG2DTMzZI6zUm3FvksBxMeOmedPPQ8FG69drTpUSe-4","pascalName":"OgImageBlogPostSatori","kebabName":"og-image-blog-post-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/app/components/OgImage/BlogPost.satori.vue","category":"app","renderer":"satori","propNames":["title","category"]},{"hash":"Nii9MheFKbeOSkOj9qtSGSHTVGzl03zt8xU3S9I-GA4","pascalName":"BlogPostTakumi","kebabName":"blog-post-takumi","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/BlogPost.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","author","date","category","avatar","backgroundImage"]},{"hash":"Kf8rphxjBGtGJd9yb27plwTGRU5JtSzvg8wWkhMIkBI","pascalName":"BrutalistSatori","kebabName":"brutalist-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Brutalist.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","subtitle","accent"]},{"hash":"rL7FpBisCop2TG42iQRJGFZZItC3-XzdqfmptP9UCnk","pascalName":"DocsTakumi","kebabName":"docs-takumi","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Docs.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","description","icon","primaryColor","primaryTextColor","site"]},{"hash":"I2PtG1xFMpZxsUmEZfqSesH2AcS0S1KfSK-IQzaK7FQ","pascalName":"FrameSatori","kebabName":"frame-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Frame.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","description","bg","icon","logo","image","username","socials"]},{"hash":"mh6YW5EOmoJ0J6i6aA11GC0IxPdgToPp30qK2LIsqf4","pascalName":"NuxtSatori","kebabName":"nuxt-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Nuxt.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","headline"]},{"hash":"FrixLZMM-QKuCVMeLU72WdQbE-CHwAwf4DqV8S2uAd0","pascalName":"NuxtSeoSatori","kebabName":"nuxt-seo-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","description","isPro"]},{"hash":"cFYTVsKa3J48KJwXTJEqV9qZKEA0zgz-W-8jrdXKjZw","pascalName":"NuxtSeoTakumi","kebabName":"nuxt-seo-takumi","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/NuxtSeo.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","title","description","isPro","width","height"]},{"hash":"5Xy09wVQErT2e9MpEtdHkz5OxL6tRgqo-9MFvemClFE","pascalName":"PergelSatori","kebabName":"pergel-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/Pergel.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","description","headline"]},{"hash":"qzOKZNUZ-1A2I3uL-N-od-jRWyexKx7JSJZlmOg9NHc","pascalName":"ProductCardTakumi","kebabName":"product-card-takumi","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/ProductCard.takumi.vue","category":"community","renderer":"takumi","propNames":["colorMode","productName","price","description","image","brand"]},{"hash":"5IACzL4LjOUdw1WLpjABTnAfWRkWV8uXT7y8tBxUwC0","pascalName":"SaaSSatori","kebabName":"saa-s-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SaaS.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","icon","theme","image"]},{"hash":"b9CqMyNj9aYI3JDauWG-T6y4xe5-M-tBSu-LOj94Z4M","pascalName":"SimpleBlogSatori","kebabName":"simple-blog-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/SimpleBlog.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title"]},{"hash":"RJ3pWw5n7QlfM6kEXmvD-jmscNOvC74V-EnvrlvImyw","pascalName":"UnJsSatori","kebabName":"un-js-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/UnJs.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","title","emoji","contributors"]},{"hash":"wSTKUff2Xeyt-k2gaHRy9YGXwDqwRpdugm7Z8qF9zBo","pascalName":"WithEmojiSatori","kebabName":"with-emoji-satori","path":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community/WithEmoji.satori.vue","category":"community","renderer":"satori","propNames":["colorMode","emoji","title"]}];
 
 const RENDERER_SUFFIXES = ["satori", "browser", "takumi"];
 const RE_RENDERER_SUFFIX_DOT = /\.?(satori|browser|takumi)$/i;
@@ -3205,11 +3211,11 @@ async function resolveContext(e) {
   return ctx;
 }
 
-const _2fq3mKLioQT9WF7SNq5ZBZ8YnkXbraJbcFJWoVDOQ = defineNitroPlugin(async (nitro) => {
+const _w3pxru30RJx4db7o1qeSu3HW1paXYYyUCpePTW9SvQ = defineNitroPlugin(async (nitro) => {
   return;
 });
 
-const rootDir$1 = "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io";
+const rootDir$1 = "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io";
 
 const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"I work on ASR, TTS, NLP, and Machine Learning."}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"title":"Anurag Kanade"};
 
@@ -3238,7 +3244,7 @@ const asyncContext = getContext("nuxt-dev", {
 	asyncContext: true,
 	AsyncLocalStorage
 });
-const _rYT4tvxI0SeIkAdjzROfqC8pJ49QxGY72L_XCnfgZwU = (nitroApp) => {
+const _otcCH8MuRfzzpQ7wQ5NWJYycUyTi9PVHG4ps6MI2P3w = (nitroApp) => {
 	const handler = nitroApp.h3App.handler;
 	nitroApp.h3App.handler = (event) => {
 		return asyncContext.callAsync({
@@ -3311,10 +3317,19 @@ function onConsoleLog(callback) {
 	consola$1.wrapConsole();
 }
 
+const script = "\"use strict\";(()=>{const o=window,e=document.documentElement,c=[\"dark\",\"light\"],s=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let r=s===\"system\"?f():s;const l=e.getAttribute(\"data-color-mode-forced\");l&&(r=l),i(r),o[\"__NUXT_COLOR_MODE__\"]={preference:s,value:r,getColorScheme:f,addColorScheme:i,removeColorScheme:d};function i(t){const a=\"\"+t+\"\",n=\"\";e.classList?e.classList.add(a):e.className+=\" \"+a,n&&e.setAttribute(\"data-\"+n,t)}function d(t){const a=\"\"+t+\"\",n=\"\";e.classList?e.classList.remove(a):e.className=e.className.replace(new RegExp(a,\"g\"),\"\"),n&&e.removeAttribute(\"data-\"+n)}function u(t){return o.matchMedia(\"(prefers-color-scheme\"+t+\")\")}function f(){if(o.matchMedia&&u(\"\").media!==\"not all\"){for(const t of c)if(u(\":\"+t).matches)return t}return\"light\"}})();function getStorageValue(o,e){switch(o){case\"localStorage\":try{return window.localStorage.getItem(e)}catch{return null}case\"sessionStorage\":try{return window.sessionStorage.getItem(e)}catch{return null}case\"cookie\":try{return getCookie(e)}catch{return null}default:return null}}function getCookie(o){const c=(\"; \"+window.document.cookie).split(\"; \"+o+\"=\");if(c.length===2){const s=c.pop();return s?s.split(\";\").shift():null}}";
+
+const _NoNc_tvakTwhxci2lMl32UhK2HOciQ88G1oE1WkAV4g = (function(nitro) {
+  nitro.hooks.hook("render:html", (htmlContext) => {
+    htmlContext.head.push(`<script>${script}<\/script>`);
+  });
+});
+
 const plugins = [
-  _Idu3Fy3jg5U774QH15OrbqfIZKkMiqDzT8qKG7yf0tg,
-_2fq3mKLioQT9WF7SNq5ZBZ8YnkXbraJbcFJWoVDOQ,
-_rYT4tvxI0SeIkAdjzROfqC8pJ49QxGY72L_XCnfgZwU,
+  _QlyUEWHhYEMRgRB1NxtjOQTuG9lyH4pC8Yo9Doosk,
+_w3pxru30RJx4db7o1qeSu3HW1paXYYyUCpePTW9SvQ,
+_otcCH8MuRfzzpQ7wQ5NWJYycUyTi9PVHG4ps6MI2P3w,
+_NoNc_tvakTwhxci2lMl32UhK2HOciQ88G1oE1WkAV4g,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
@@ -3343,7 +3358,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _fVFchW = eventHandler((event) => {
+const _bPSZXc = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -3486,9 +3501,9 @@ function publicAssetsURL(...path) {
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
 // @ts-expect-error file will be produced after app build
-const getServerEntry = () => import('file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
+const getServerEntry = () => import('file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt//dist/server/server.mjs').then((r) => r.default || r);
 // @ts-expect-error file will be produced after app build
-const getClientManifest = () => import('file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getClientManifest = () => import('file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt//dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 // -- SSR Renderer --
 const getSSRRenderer = lazyCachedFunction(async () => {
 	// Load server bundle
@@ -3781,7 +3796,7 @@ async function getIslandContext(event) {
 }
 
 const PORT_SUFFIX_RE = /:\d+$/;
-const _EslMBF = eventHandler(async (e) => {
+const _ITo5YU = eventHandler(async (e) => {
   if (e.context._initedSiteConfig)
     return;
   const runtimeConfig = useRuntimeConfig(e);
@@ -3832,7 +3847,7 @@ const _EslMBF = eventHandler(async (e) => {
   e.context._initedSiteConfig = true;
 });
 
-const _0uT70C = eventHandler(async (e) => {
+const _MTRtfP = eventHandler(async (e) => {
   const siteConfig = getSiteConfig(e);
   const nitroOrigin = getNitroOrigin(e);
   const runtimeConfig = useRuntimeConfig(e);
@@ -3846,7 +3861,7 @@ const _0uT70C = eventHandler(async (e) => {
   };
 });
 
-const _XZQf_4 = eventHandler(async (event) => {
+const _aSX5bK = eventHandler(async (event) => {
   const collection = getRouterParam(event, "collection") || event.path?.split("/")?.[2] || "";
   setHeader(event, "Content-Type", "text/plain");
   const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
@@ -3857,7 +3872,7 @@ const _XZQf_4 = eventHandler(async (event) => {
       return content.substring(lineStart.length, content.length - 1);
     }
   }
-  return await import('file:///Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
+  return await import('file:///Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
 });
 
 async function decompressSQLDump(base64Str, compressionType = "gzip") {
@@ -3877,7 +3892,7 @@ async function decompressSQLDump(base64Str, compressionType = "gzip") {
 }
 
 const checksums = {
-  "blog": "v3.5.0--d6Ln-VxuhgiOqdSnWOcxUfmI-PmP3cKZHAw6WkFFDnE"
+  "blog": "v3.5.0--ksCIgWBlxEg2UvgmMvMzkJVVwIHGMqsPOB8SbUna_A0"
 };
 const checksumsStructure = {
   "blog": "WJCX28_xSh5_96sJUGlvg37AnteX_-XVuOm7SCvT5WI"
@@ -4288,7 +4303,7 @@ async function runTask(name, {
   }
 }
 
-const _j6rixu = eventHandler(async (event) => {
+const _C8iNlo = eventHandler(async (event) => {
   const { sql } = await readBody(event);
   const collection = getRouterParam(event, "collection") || event.path?.split("/")?.[2] || "";
   assertSafeQuery(sql, collection);
@@ -4299,24 +4314,24 @@ const _j6rixu = eventHandler(async (event) => {
   return loadDatabaseAdapter(conf).all(sql);
 });
 
-const _lazy_5N8ENa = () => Promise.resolve().then(function () { return renderer; });
-const _lazy_5AGypC = () => Promise.resolve().then(function () { return debug_json$1; });
-const _lazy_DBrmhj = () => Promise.resolve().then(function () { return image$1; });
+const _lazy_eJGg2V = () => Promise.resolve().then(function () { return renderer; });
+const _lazy_Aalw9m = () => Promise.resolve().then(function () { return debug_json$1; });
+const _lazy_CHzfRk = () => Promise.resolve().then(function () { return image$1; });
 
 const handlers = [
-  { route: '', handler: _fVFchW, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_5N8ENa, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _bPSZXc, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_eJGg2V, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _EslMBF, lazy: false, middleware: true, method: undefined },
-  { route: '/__site-config__/debug.json', handler: _0uT70C, lazy: false, middleware: false, method: undefined },
-  { route: '/_og/debug.json', handler: _lazy_5AGypC, lazy: true, middleware: false, method: undefined },
-  { route: '/_og/d/**', handler: _lazy_DBrmhj, lazy: true, middleware: false, method: undefined },
-  { route: '/_og/s/**', handler: _lazy_DBrmhj, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_content/blog/sql_dump.txt', handler: _XZQf_4, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/info/sql_dump.txt', handler: _XZQf_4, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/blog/query', handler: _j6rixu, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/info/query', handler: _j6rixu, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_5N8ENa, lazy: true, middleware: false, method: undefined }
+  { route: '', handler: _ITo5YU, lazy: false, middleware: true, method: undefined },
+  { route: '/__site-config__/debug.json', handler: _MTRtfP, lazy: false, middleware: false, method: undefined },
+  { route: '/_og/debug.json', handler: _lazy_Aalw9m, lazy: true, middleware: false, method: undefined },
+  { route: '/_og/d/**', handler: _lazy_CHzfRk, lazy: true, middleware: false, method: undefined },
+  { route: '/_og/s/**', handler: _lazy_CHzfRk, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_content/blog/sql_dump.txt', handler: _aSX5bK, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/info/sql_dump.txt', handler: _aSX5bK, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/blog/query', handler: _C8iNlo, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/info/query', handler: _C8iNlo, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_eJGg2V, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -4571,8 +4586,8 @@ const tw4Breakpoints = {};
 
 const compatibility = {"browser":false,"satori":"node","takumi":"node-dev","resvg":"node-dev","sharp":false};
 
-const buildDir = "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt";
-const rootDir = "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io";
+const buildDir = "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt";
+const rootDir = "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io";
 
 let fontUrlMapping;
 async function loadFontUrlMapping() {
@@ -4642,13 +4657,13 @@ async function resolve$1(event, font) {
 const resolve = (true || false) ? resolve$2 : resolve$1;
 
 const fontRequirements = {"weights":[400],"styles":["normal"],"families":[],"hasDynamicBindings":false};
-const _mapPath = "/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/.nuxt/cache/og-image/component-font-map.json";
+const _mapPath = "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/.nuxt/cache/og-image/component-font-map.json";
 function getComponentFontMap() {
   try { return JSON.parse(readFileSync(_mapPath, 'utf-8')) }
   catch { return {} }
 }
 
-const resolvedFonts = [{"family":"Inter","src":"/_og-static-fonts/inter-400-latin.ttf","weight":400,"style":"normal","satoriSrc":"/_og-static-fonts/inter-400-latin.ttf","absolutePath":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-400-latin.ttf","fallback":true},{"family":"Inter","src":"/_og-static-fonts/inter-700-latin.ttf","weight":700,"style":"normal","satoriSrc":"/_og-static-fonts/inter-700-latin.ttf","absolutePath":"/Users/anuragkanade/Documents/my_github_repos/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-700-latin.ttf","fallback":true}];
+const resolvedFonts = [{"family":"Inter","src":"/_og-static-fonts/inter-400-latin.ttf","weight":400,"style":"normal","satoriSrc":"/_og-static-fonts/inter-400-latin.ttf","absolutePath":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-400-latin.ttf","fallback":true},{"family":"Inter","src":"/_og-static-fonts/inter-700-latin.ttf","weight":700,"style":"normal","satoriSrc":"/_og-static-fonts/inter-700-latin.ttf","absolutePath":"/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-700-latin.ttf","fallback":true}];
 
 const availableFonts = [];
 

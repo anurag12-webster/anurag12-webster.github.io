@@ -20,6 +20,8 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/chunk-reload.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/prefetch.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/check-if-page-unused.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/plugin.server.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/plugin.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/plugins/og-image-canonical-urls.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt-og-image/dist/runtime/app/plugins/route-rule-og-image.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
