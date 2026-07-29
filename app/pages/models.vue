@@ -1,12 +1,22 @@
 <template>
-  <div class="blog-container">
-    <h1 class="blog-title">Models</h1>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Models</h1>
+      <p>Open-source models for ML research and development, published on Hugging Face.</p>
+    </header>
+
     <ul class="post-list writing-list">
       <li v-for="model in models" :key="model.id" class="post-item dataset-item">
         <a :href="model.link" target="_blank" rel="noopener noreferrer">
-          <span class="post-title">{{ model.title }}</span>
+          <span class="post-title-row">
+            <span class="post-title">{{ model.title }}</span>
+            <svg class="ext-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </span>
+          <span class="dataset-desc">{{ model.desc }}</span>
         </a>
-        <p class="dataset-desc">{{ model.desc }}</p>
       </li>
     </ul>
   </div>

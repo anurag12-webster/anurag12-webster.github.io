@@ -3217,7 +3217,7 @@ const _w3pxru30RJx4db7o1qeSu3HW1paXYYyUCpePTW9SvQ = defineNitroPlugin(async (nit
 
 const rootDir$1 = "/Users/anuragkanade/Documents/my_website/anurag12-webster.github.io";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"I work on ASR, TTS, NLP, and Machine Learning."}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"title":"Anurag Kanade"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"I work on ASR, TTS, NLP, and Machine Learning."}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com","crossorigin":""},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap"},{"rel":"stylesheet","href":"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"en"},"title":"Anurag Kanade"};
 
 const appRootTag = "div";
 
@@ -3892,7 +3892,7 @@ async function decompressSQLDump(base64Str, compressionType = "gzip") {
 }
 
 const checksums = {
-  "blog": "v3.5.0--ksCIgWBlxEg2UvgmMvMzkJVVwIHGMqsPOB8SbUna_A0"
+  "blog": "v3.5.0--XeorWQVdbOFuiUbV_QtS0lb_1Wa9qE2pn0xd1IGv-wg"
 };
 const checksumsStructure = {
   "blog": "WJCX28_xSh5_96sJUGlvg37AnteX_-XVuOm7SCvT5WI"

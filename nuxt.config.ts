@@ -18,6 +18,7 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css'],
 
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: { lang: 'en' },
       title: 'Anurag Kanade',
@@ -27,9 +28,11 @@ export default defineNuxtConfig({
         { name: 'description', content: 'I work on ASR, TTS, NLP, and Machine Learning.' },
       ],
       link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap',
         },
         {
           rel: 'stylesheet',
@@ -41,7 +44,10 @@ export default defineNuxtConfig({
 
   content: {
     highlight: {
-      theme: 'github-light',
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+      },
       langs: ['python', 'javascript', 'typescript', 'bash', 'json', 'yaml', 'c', 'cpp'],
     },
     build: {
@@ -51,6 +57,10 @@ export default defineNuxtConfig({
         },
         rehypePlugins: {
           'rehype-katex': {},
+        },
+        toc: {
+          depth: 3,
+          searchDepth: 3,
         },
       },
     },

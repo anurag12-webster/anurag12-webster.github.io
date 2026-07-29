@@ -8,7 +8,23 @@
       </template>
     </ClientOnly>
   </div>
-  <pre v-else :class="props.class"><slot /></pre>
+
+  <div v-else class="code-block">
+    <div class="code-header">
+      <span class="code-lang">{{ filename || language || 'code' }}</span>
+      <button class="code-copy" type="button" @click="copyCode">
+        <svg v-if="!copied" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+        <svg v-else width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        {{ copied ? 'Copied' : 'Copy' }}
+      </button>
+    </div>
+    <pre :class="props.class"><slot /></pre>
+  </div>
 </template>
 
 <script setup>
@@ -20,6 +36,17 @@ const props = defineProps({
   meta: { type: String, default: null },
   class: { type: String, default: null },
 })
+
+const copied = ref(false)
+async function copyCode() {
+  try {
+    await navigator.clipboard.writeText(props.code)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  } catch {
+    // clipboard unavailable (permissions / non-secure context)
+  }
+}
 
 const svg = ref('')
 // opt-in via ```mermaid wide fence meta — for diagrams that are naturally
@@ -156,4 +183,7 @@ if (import.meta.client && props.language === 'mermaid') {
   white-space: pre-wrap;
   margin: 0;
 }
+
+/* Wrapped code blocks (.code-block / .code-header / .code-copy) are
+   styled unscoped in main.css. */
 </style>
