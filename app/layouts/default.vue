@@ -12,7 +12,7 @@
         </ul>
 
         <div class="nav-right">
-          <a href="/resume.pdf" download="Anurag-Kanade-Resume.pdf" class="btn btn-secondary btn-sm nav-resume-btn">
+          <a href="https://drive.google.com/file/d/11PAI9DTdlqDPHTIP5WzOGTDWdn9w0hPG/view?usp=sharing" download="Anurag-Kanade-Resume.pdf" class="btn btn-secondary btn-sm nav-resume-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -62,7 +62,7 @@
           <NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }" @click="menuOpen = false">Writing</NuxtLink>
           <NuxtLink to="/datasets" :class="{ active: route.path === '/datasets' }" @click="menuOpen = false">Datasets</NuxtLink>
           <NuxtLink to="/models" :class="{ active: route.path === '/models' }" @click="menuOpen = false">Models</NuxtLink>
-          <a href="/resume.pdf" download="Anurag-Kanade-Resume.pdf" class="mobile-resume" @click="menuOpen = false">
+          <a href="https://drive.google.com/file/d/11PAI9DTdlqDPHTIP5WzOGTDWdn9w0hPG/view?usp=sharing" download="Anurag-Kanade-Resume.pdf" class="mobile-resume" @click="menuOpen = false">
             Resume
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
