@@ -1,5 +1,5 @@
 export const checksums = {
-  "blog": "v3.5.0--XeorWQVdbOFuiUbV_QtS0lb_1Wa9qE2pn0xd1IGv-wg"
+  "blog": "v3.5.0--Dy-FmNf_vhPxKoKngot3xu7EmVX6pKcQJwkANuKfmoY"
 }
 export const checksumsStructure = {
   "blog": "WJCX28_xSh5_96sJUGlvg37AnteX_-XVuOm7SCvT5WI"

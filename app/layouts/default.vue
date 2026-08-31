@@ -7,8 +7,7 @@
         <ul class="nav-links">
           <li><NuxtLink to="/" :class="{ active: route.path === '/' }">Home</NuxtLink></li>
           <li><NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }">Writing</NuxtLink></li>
-          <li><NuxtLink to="/datasets" :class="{ active: route.path === '/datasets' }">Datasets</NuxtLink></li>
-          <li><NuxtLink to="/models" :class="{ active: route.path === '/models' }">Models</NuxtLink></li>
+          <li><NuxtLink to="/work" :class="{ active: route.path === '/work' }">Work</NuxtLink></li>
         </ul>
 
         <div class="nav-right">
@@ -60,8 +59,7 @@
         <div v-if="menuOpen" class="mobile-menu">
           <NuxtLink to="/" :class="{ active: route.path === '/' }" @click="menuOpen = false">Home</NuxtLink>
           <NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }" @click="menuOpen = false">Writing</NuxtLink>
-          <NuxtLink to="/datasets" :class="{ active: route.path === '/datasets' }" @click="menuOpen = false">Datasets</NuxtLink>
-          <NuxtLink to="/models" :class="{ active: route.path === '/models' }" @click="menuOpen = false">Models</NuxtLink>
+          <NuxtLink to="/work" :class="{ active: route.path === '/work' }" @click="menuOpen = false">Work</NuxtLink>
           <a href="https://drive.google.com/file/d/11PAI9DTdlqDPHTIP5WzOGTDWdn9w0hPG/view?usp=sharing" download="Anurag-Kanade-Resume.pdf" class="mobile-resume" @click="menuOpen = false">
             Resume
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -78,7 +76,7 @@
       <slot />
     </main>
 
-    <footer>
+    <footer v-if="route.path !== '/'">
       <div class="footer-inner">
         <span class="footer-copy">© {{ year }} Anurag Kanade</span>
         <div class="footer-links">

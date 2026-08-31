@@ -30,7 +30,7 @@ I've also built some TTS datasets that you might find useful, especially for non
 
 - [Obama Voice Sample Dataset](https://huggingface.co/datasets/ModelsLab/Obama-Sample-Dataset) — 25+ minutes of Barack Obama's voice from public speeches, optimized for RVC training. Clean 24 kHz WAV files.
 
-Check out more on the [datasets page](/datasets).
+Check out more on the [work page](/work).
 
 ## Things to Consider While Building the Dataset
 

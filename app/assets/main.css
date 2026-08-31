@@ -215,6 +215,7 @@ nav.nav-scrolled {
   letter-spacing: -0.02em;
   color: var(--fg);
   flex-shrink: 0;
+  transition: color var(--duration) var(--ease-out);
 }
 
 .nav-name:hover {
@@ -502,6 +503,34 @@ footer {
   transform: translate(0, 0);
 }
 
+.social-icon {
+  flex-shrink: 0;
+}
+
+.icon-github {
+  color: #181717;
+}
+
+.dark .icon-github {
+  color: #ffffff;
+}
+
+.icon-hf {
+  color: #ffd21e;
+}
+
+.icon-x {
+  color: #000000;
+}
+
+.dark .icon-x {
+  color: #ffffff;
+}
+
+.icon-linkedin {
+  color: #0a66c2;
+}
+
 /* ============================================================
    Shared section header / labels
    ============================================================ */
@@ -572,11 +601,12 @@ footer {
   padding: 0.75rem;
   margin: 0 -0.75rem;
   border-radius: var(--radius);
-  transition: background var(--duration) var(--ease-out);
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 }
 
 .writing-list .post-item a:hover {
   background: var(--bg-subtle);
+  transform: translateX(2px);
 }
 
 .post-title {
