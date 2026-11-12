@@ -57,6 +57,9 @@
 <script setup>
 import { formatResourceDate, resourceSlug, useResources } from '~/composables/useResources'
 
+// Resources visitors (from Instagram) get a standalone layout with no links to the rest of the site.
+definePageMeta({ layout: 'resources' })
+
 const route = useRoute()
 const slug = route.params.slug
 
