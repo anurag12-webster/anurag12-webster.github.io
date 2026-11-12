@@ -1,0 +1,9 @@
+# Second draft example: an external link with an auto-generated cover (no thumbnail). Safe to delete.
+draft: true
+title: "Example: Triton Kernel Code Dataset"
+description: "Triton kernel bodies and CUDA→Triton translation pairs for fine-tuning code models."
+date: "2026-11-01"
+type: "Dataset"
+tags: ["GPU", "Datasets"]
+download: "https://huggingface.co/datasets/edwixx/triton-code-dataset"
+cta: "Open on Hugging Face"

@@ -8,6 +8,7 @@
           <li><NuxtLink to="/" :class="{ active: route.path === '/' }">Home</NuxtLink></li>
           <li><NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }">Writing</NuxtLink></li>
           <li><NuxtLink to="/work" :class="{ active: route.path === '/work' }">Work</NuxtLink></li>
+          <li><NuxtLink to="/resources" :class="{ active: route.path.startsWith('/resources') }">Resources</NuxtLink></li>
         </ul>
 
         <div class="nav-right">
@@ -60,6 +61,7 @@
           <NuxtLink to="/" :class="{ active: route.path === '/' }" @click="menuOpen = false">Home</NuxtLink>
           <NuxtLink to="/blog" :class="{ active: route.path.startsWith('/blog') }" @click="menuOpen = false">Writing</NuxtLink>
           <NuxtLink to="/work" :class="{ active: route.path === '/work' }" @click="menuOpen = false">Work</NuxtLink>
+          <NuxtLink to="/resources" :class="{ active: route.path.startsWith('/resources') }" @click="menuOpen = false">Resources</NuxtLink>
           <a href="https://drive.google.com/file/d/11PAI9DTdlqDPHTIP5WzOGTDWdn9w0hPG/view?usp=sharing" download="Anurag-Kanade-Resume.pdf" class="mobile-resume" @click="menuOpen = false">
             Resume
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

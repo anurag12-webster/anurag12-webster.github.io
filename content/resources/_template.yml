@@ -1,0 +1,26 @@
+# Copy this file, rename it (the file name becomes the URL: anuragkanade.com/resources/<file-name>),
+# fill it in, and delete `draft: true` when it's ready to go live.
+# Drafts only show up in `npm run dev`, never on the live site.
+draft: true
+title: "Example: ML Interview Cheatsheet"
+description: "A one-page summary of the ML concepts that come up most in interviews — bias/variance, regularization, metrics, and more."
+date: "2026-11-12"
+type: "PDF"
+size: "1.2 MB"
+tags: ["ML", "Interviews"]
+featured: true
+
+# Where the file lives. Use a full URL for anything big or popular
+# (GitHub Releases, Hugging Face, R2…), or a path under public/ for small files.
+download: "/downloads/files/example.pdf"
+
+# 16:10 image in public/downloads/thumbs/ (1600x1000 works well). Remove the line to get an auto-generated cover.
+thumbnail: "/rvq-in-encodec.png"
+
+highlights:
+  - "Bias–variance trade-off with diagrams"
+  - "Precision, recall, F1, ROC-AUC at a glance"
+  - "Common follow-up questions and how to answer them"
+
+# Optional: change the button text (default "Download", or "Open" for Link/Notion types)
+# cta: "Get the PDF"

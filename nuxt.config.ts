@@ -66,9 +66,16 @@ export default defineNuxtConfig({
     },
   },
 
+  // Short link for Instagram bios/captions: anuragkanade.com/r
+  routeRules: {
+    '/r': { redirect: '/resources' },
+  },
+
   nitro: {
     prerender: {
       routes: [
+        '/resources',
+        '/r',
         '/blog/gpu-architecture-notes',
         '/blog/neural-audio-codec-rvq',
         '/blog/shrinking-full-duplex-speech',
